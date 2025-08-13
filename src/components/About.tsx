@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight, Target, Lightbulb, Users, TrendingUp } from "lucide-react";
 import Silk from "@/blocks/Backgrounds/Silk/Silk";
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
@@ -71,15 +72,14 @@ export default function AboutSection() {
 
           {/* Right Column - Main Image */}
           <div className="relative">
-            <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center">
-                  <Users className="w-16 h-16 text-white/60 mx-auto mb-4" />
-                  <p className="text-white/60 font-medium text-lg">
-                    Team Collaboration
-                  </p>
-                </div>
-              </div>
+            {/* IMAGE LOCATION 1: Main hero image for about section */}
+            <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl overflow-hidden border border-white/20 shadow-2xl relative">
+              <Image
+                src="https://i.pinimg.com/1200x/72/e3/83/72e38320a669ebb2cee4fe17f4fe5d92.jpg"
+                alt="Holfort Media team or workspace"
+                fill
+                className="object-cover"
+              />
             </div>
             {/* Floating accent card */}
             <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-6 shadow-2xl">
@@ -91,14 +91,23 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Core Values - Simplified */}
+        {/* Core Values - Updated with Image Spaces */}
         <div className="mb-20">
           <h3 className="text-3xl font-bold text-white text-center mb-12">
             What We Do Best
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
+            {/* Brand Strategy Card */}
             <div className="bg-gradient-to-br from-purple-600/20 to-blue-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
-              <Users className="w-10 h-10 text-purple-400 mx-auto mb-4" />
+              {/* IMAGE LOCATION 2: Brand Strategy Image */}
+              <div className="aspect-video mb-4 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-xl overflow-hidden relative">
+                <Image
+                  src="https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg"
+                  alt="Brand Strategy"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <h4 className="text-xl font-semibold text-white mb-3">
                 Brand Strategy
               </h4>
@@ -106,8 +115,18 @@ export default function AboutSection() {
                 Customized media strategies that drive engagement and growth
               </p>
             </div>
+
+            {/* Creative Content Card */}
             <div className="bg-gradient-to-br from-blue-600/20 to-indigo-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
-              <Lightbulb className="w-10 h-10 text-blue-400 mx-auto mb-4" />
+              {/* IMAGE LOCATION 3: Creative Content Image */}
+              <div className="aspect-video mb-4 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl overflow-hidden relative">
+                <Image
+                  src="https://i.pinimg.com/736x/d5/2d/7c/d52d7cdd20736a01b0978e04ac276d39.jpg"
+                  alt="Creative Content"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <h4 className="text-xl font-semibold text-white mb-3">
                 Creative Content
               </h4>
@@ -115,8 +134,18 @@ export default function AboutSection() {
                 Compelling narratives that leave lasting impressions
               </p>
             </div>
+
+            {/* Digital Growth Card */}
             <div className="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
-              <TrendingUp className="w-10 h-10 text-indigo-400 mx-auto mb-4" />
+              {/* IMAGE LOCATION 4: Digital Growth Image */}
+              <div className="aspect-video mb-4 bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 rounded-xl overflow-hidden relative">
+                <Image
+                  src="https://i.pinimg.com/736x/3a/23/85/3a23856a10e4182f2abb660f1aecfc4b.jpg"
+                  alt="Digital Growth"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <h4 className="text-xl font-semibold text-white mb-3">
                 Digital Growth
               </h4>
@@ -128,35 +157,99 @@ export default function AboutSection() {
         </div>
 
         {/* Image Gallery Section */}
-        <div className="mb-20">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Image 1 */}
-            <div className="relative group">
-              <div className="aspect-[16/10] bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-2xl overflow-hidden border border-white/20 shadow-xl">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <Target className="w-12 h-12 text-white/60 mx-auto mb-3" />
-                    <p className="text-white/60 font-medium">
+        <div className="mb-32">
+          <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto px-6">
+            {/* Strategic Planning Card */}
+            <div className="group relative">
+              {/* Floating background elements */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+              <div className="relative">
+                {/* Main card container */}
+                <div className="aspect-[16/10] rounded-3xl overflow-hidden relative border border-white/10 shadow-2xl backdrop-blur-sm">
+                  {/* Animated gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/40 via-purple-600/30 to-blue-600/40 opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+                  {/* Image */}
+                  <Image
+                    src="https://i.pinimg.com/736x/3c/0a/af/3c0aafbcd0d04d99fb33628ed0d9205e.jpg"
+                    alt="Strategic Planning"
+                    fill
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  />
+                  {/* Shine effect */}{" "}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-in-out"></div>
+                  </div>
+                  {/* Content overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  {/* Text content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-2xl font-bold mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
                       Strategic Planning
+                    </h3>
+                    <p className="text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200">
+                      Comprehensive strategic solutions for sustainable growth
                     </p>
                   </div>
                 </div>
+
+                {/* Decorative corner elements */}
+                <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-purple-400/50 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-blue-400/50 rounded-br-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
 
-            {/* Image 2 */}
-            <div className="relative group">
-              <div className="aspect-[16/10] bg-gradient-to-br from-blue-600/30 to-indigo-600/30 rounded-2xl overflow-hidden border border-white/20 shadow-xl">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <TrendingUp className="w-12 h-12 text-white/60 mx-auto mb-3" />
-                    <p className="text-white/60 font-medium">
+            {/* Results Delivery Card */}
+            <div className="group relative">
+              {/* Floating background elements */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+              <div className="relative">
+                {/* Main card container */}
+                <div className="aspect-[16/10] rounded-3xl overflow-hidden relative border border-white/10 shadow-2xl backdrop-blur-sm">
+                  {/* Animated gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-blue-600/30 to-indigo-600/40 opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+
+                  {/* Image */}
+                  <Image
+                    src="https://i.pinimg.com/736x/e5/45/d8/e545d8423e84af8325eed1e87308d561.jpg"
+                    alt="Results Delivery"
+                    fill
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  />
+
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-in-out"></div>
+                  </div>
+
+                  {/* Content overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+                  {/* Text content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-2xl font-bold mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
                       Results Delivery
+                    </h3>
+                    <p className="text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200">
+                      Measurable outcomes that drive business transformation
                     </p>
                   </div>
                 </div>
+
+                {/* Decorative corner elements */}
+                <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-blue-400/50 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-indigo-400/50 rounded-br-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
+          </div>
+
+          {/* Additional decorative elements */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            {/* Floating particles */}
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-400/30 rounded-full animate-pulse"></div>
+            <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-blue-400/40 rounded-full animate-pulse delay-1000"></div>
+            <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-indigo-400/30 rounded-full animate-pulse delay-500"></div>
           </div>
         </div>
 
