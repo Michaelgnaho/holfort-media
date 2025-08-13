@@ -6,10 +6,11 @@ import Link from "next/link";
 import Video from "next-video";
 import HeroVid from "../../videos/hero-vid.mp4";
 import { ArrowRight } from "lucide-react";
+import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
 
 export default function Hero() {
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className="relative w-screen min-h-screen overflow-hidden">
       {/* Background Layer - Silk Animation */}
       <div className="absolute inset-0 z-0">
         <Silk
@@ -25,88 +26,122 @@ export default function Hero() {
       <div className="absolute inset-0 z-10 bg-black/20"></div>
 
       {/* Main Content Container */}
-      <div className="relative z-20 flex flex-col lg:flex-row items-center justify-between w-full h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="relative z-20 flex flex-col lg:flex-row items-center justify-between w-full min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Left Column - Text Content */}
-        <div className="flex-1 max-w-2xl text-center lg:text-left mb-8 lg:mb-0">
-          {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-none">
-            <TextType
-              text={["WELCOME TO", "HOLFORT MEDIA!"]}
-              typingSpeed={75}
-              pauseDuration={1500}
-              showCursor={true}
-            />
-          </h1>
+        <AnimatedContent
+          distance={100}
+          direction="horizontal"
+          reverse={false}
+          duration={1.5}
+          ease="bounce.out"
+          initialOpacity={0}
+          animateOpacity={true}
+          scale={1}
+          threshold={0.2}
+          delay={0}
+        >
+          <div className="flex-1 text-center lg:text-left mb-8 lg:mb-0">
+            {/* Main Heading */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-none">
+              <TextType
+                text={["WELCOME TO", "HOLFORT MEDIA!"]}
+                typingSpeed={75}
+                pauseDuration={1500}
+                showCursor={true}
+              />
+            </h1>
 
-          {/* Subtitle */}
-          <div className="mb-8">
-            <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed">
-              Professional Media Solutions
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
-              Transforming brands through innovative digital strategies,
-              creative content, and impactful storytelling that drives real
-              results.
-            </p>
+            {/* Subtitle */}
+            <div className="mb-8">
+              <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed">
+                Professional Media Solutions
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                Transforming brands through innovative digital strategies,
+                creative content, and impactful storytelling that drives real
+                results.
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
+              <Link
+                href="/services"
+                className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group"
+              >
+                <span className="mr-3">Explore Our Services</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-2xl border-2 border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl group"
+              >
+                <span>View Our Work</span>
+              </Link>
+            </div>
           </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
-            <Link
-              href="/services"
-              className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group"
-            >
-              <span className="mr-3">Explore Our Services</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-2xl border-2 border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl group"
-            >
-              <span>View Our Work</span>
-            </Link>
-          </div>
-        </div>
+        </AnimatedContent>
 
         {/* Right Column - Hero Video (Portrait) */}
-        <div className="flex-shrink-0 w-full max-w-sm lg:max-w-xs xl:max-w-sm lg:ml-8">
-          <div className="relative mx-auto">
-            {/* Video Container - Portrait aspect ratio */}
-            <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 shadow-2xl">
-              <Video
-                src={HeroVid}
-                className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
-              />
-              <div className="mt-3 text-center">
-                <p className="text-white/80 text-sm">Our Story</p>
+        <AnimatedContent
+          distance={100}
+          direction="horizontal"
+          reverse={false}
+          duration={1.5}
+          ease="bounce.out"
+          initialOpacity={0}
+          animateOpacity={true}
+          scale={1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <div className="flex-shrink-0 w-full max-w-[80%] sm:max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm mx-auto lg:mx-0 lg:ml-8">
+            <div className="relative">
+              {/* Video Container - Responsive aspect ratio */}
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 shadow-2xl">
+                <Video
+                  src={HeroVid}
+                  className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+                <div className="mt-3 text-center">
+                  <p className="text-white/80 text-sm">Our Story</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </AnimatedContent>
       </div>
 
       {/* Bottom CTA Section */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="text-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center bg-white/10 backdrop-blur-sm text-white font-medium px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 text-sm group"
-          >
-            <span className="mr-2">Book a Consultation</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-          </Link>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 right-4 sm:right-8 z-20">
-        <div className="animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/60 rounded-full mt-2"></div>
+      <AnimatedContent
+        distance={100}
+        direction="vertical"
+        reverse={false}
+        duration={1.5}
+        ease="bounce.out"
+        initialOpacity={0}
+        animateOpacity={true}
+        scale={1}
+        threshold={0.2}
+        delay={0.6}
+      >
+        <div className="absolute pt-10 bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="text-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center bg-white/10 backdrop-blur-sm text-white font-medium px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 text-sm group"
+            >
+              <span className="mr-2">Book a Consultation</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </div>
         </div>
-      </div>
+      </AnimatedContent>
     </div>
   );
 }

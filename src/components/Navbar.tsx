@@ -13,6 +13,8 @@ import {
   Mail,
   Calendar,
 } from "lucide-react";
+import Image from "next/image";
+import logo from "@/holfort-logo.jpg"; // Adjust the path as necessary
 
 // Navigation items configuration
 const navigationItems = [
@@ -148,9 +150,7 @@ export default function Navbar() {
           {/* Logo Section */}
           <div className="flex items-center gap-3">
             {/* Optional SVG Logo Mark */}
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-              <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
-            </div>
+            {/* <Image src={logo} fill alt={""} className=""/> */}
 
             {/* Text Logo */}
             <Link
@@ -158,7 +158,7 @@ export default function Navbar() {
               className="text-white text-xl font-bold hover:text-gray-200 transition-colors duration-200"
               aria-label="Holfort Media - Go to homepage"
             >
-              Holfort Media
+              <Image src={logo} className="w-8 h-8 rounded-md" alt={"LOGO"} />
             </Link>
           </div>
 
