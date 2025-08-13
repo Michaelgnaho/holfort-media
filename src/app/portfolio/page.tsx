@@ -171,7 +171,6 @@ const categories = [
 export default function PortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [viewMode, setViewMode] = useState("grid");
-  const [] = useState(null);
 
   const filteredProjects =
     selectedCategory === "All"
@@ -258,13 +257,6 @@ export default function PortfolioPage() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-
-                      {/* Play Button for Videos */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200 cursor-pointer">
-                          <Play className="w-10 h-10 text-white ml-1" />
-                        </div>
-                      </div>
 
                       {/* Project Category Badge */}
                       <div className="absolute top-6 left-6 bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 rounded-full">
@@ -437,18 +429,6 @@ export default function PortfolioPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
-                      {/* Overlay Content */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="flex gap-3">
-                          <button className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200">
-                            <Play className="w-6 h-6 text-white ml-0.5" />
-                          </button>
-                          <button className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200">
-                            <ExternalLink className="w-5 h-5 text-white" />
-                          </button>
-                        </div>
-                      </div>
-
                       {/* Category Badge */}
                       <div className="absolute top-4 left-4">
                         <span className="bg-gradient-to-r from-purple-600 to-blue-600 px-3 py-1 rounded-full text-white text-xs font-semibold">
@@ -592,21 +572,13 @@ export default function PortfolioPage() {
                   </button>
                 </div>
 
-                {/* Case Study Visual */}
+                {/* Case Study Visual - Simplified Video */}
                 <div className="relative">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative group">
+                  <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative">
                     <Video
                       src={HeroVid}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover rounded-3xl"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-
-                    {/* Play Button */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <button className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200 group">
-                        <Play className="w-10 h-10 text-white ml-1" />
-                      </button>
-                    </div>
 
                     {/* Floating Elements */}
                     <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/20">

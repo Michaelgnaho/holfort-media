@@ -139,7 +139,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 w-screen bg-transparent backdrop-blur-md border-b border-gray-800"
+      className="sticky top-0 z-50 w-screen bg-black backdrop-blur-md border-b border-gray-800"
       role="navigation"
       aria-label="Main navigation"
     >
