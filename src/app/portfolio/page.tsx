@@ -193,12 +193,10 @@ export default function PortfolioPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={0}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -230,12 +228,10 @@ export default function PortfolioPage() {
                       direction="horizontal"
                       reverse={index % 2 === 0}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={0.3 * (index + 1)}
                     >
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                         <h3 className="text-3xl font-bold text-white mb-2">
@@ -260,12 +256,10 @@ export default function PortfolioPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={1.5}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -288,12 +282,10 @@ export default function PortfolioPage() {
                     direction="horizontal"
                     reverse={index % 2 === 0}
                     duration={1.5}
-                    ease="bounce.out"
                     initialOpacity={0}
                     animateOpacity={true}
                     scale={1}
                     threshold={0.2}
-                    delay={1.8 + 0.3 * index}
                   >
                     <div className="group relative">
                       <div className="bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 hover:scale-[1.02]">
@@ -377,12 +369,10 @@ export default function PortfolioPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={2.4}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col lg:flex-row justify-between items-center mb-12">
@@ -454,12 +444,10 @@ export default function PortfolioPage() {
                     direction="horizontal"
                     reverse={index % 2 === 0}
                     duration={1.5}
-                    ease="bounce.out"
                     initialOpacity={0}
                     animateOpacity={true}
                     scale={1}
                     threshold={0.2}
-                    delay={2.7 + 0.3 * index}
                   >
                     <div className="group">
                       <div
@@ -553,12 +541,10 @@ export default function PortfolioPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={4.5}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -580,12 +566,10 @@ export default function PortfolioPage() {
                     direction="horizontal"
                     reverse={false}
                     duration={1.5}
-                    ease="bounce.out"
                     initialOpacity={0}
                     animateOpacity={true}
                     scale={1}
                     threshold={0.2}
-                    delay={4.8}
                   >
                     <div>
                       <div className="flex items-center mb-6">
@@ -634,12 +618,10 @@ export default function PortfolioPage() {
                             direction="horizontal"
                             reverse={index % 2 === 0}
                             duration={1.5}
-                            ease="bounce.out"
                             initialOpacity={0}
                             animateOpacity={true}
                             scale={1}
                             threshold={0.2}
-                            delay={5.1 + 0.3 * index}
                           >
                             <div className="text-center p-4 bg-white/5 rounded-2xl border border-white/10">
                               <h4 className="text-3xl font-bold text-white mb-2">
@@ -663,12 +645,10 @@ export default function PortfolioPage() {
                     direction="horizontal"
                     reverse={true}
                     duration={1.5}
-                    ease="bounce.out"
                     initialOpacity={0}
                     animateOpacity={true}
                     scale={1}
                     threshold={0.2}
-                    delay={6.3}
                   >
                     <div className="relative w-full max-w-full mx-auto">
                       <div className="aspect-[4/3] sm:aspect-[16/9] bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
@@ -699,12 +679,10 @@ export default function PortfolioPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={6.6}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <div className="bg-gradient-to-r from-purple-600/10 to-blue-600/10 backdrop-blur-sm rounded-3xl p-12 border border-white/10">

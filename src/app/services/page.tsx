@@ -210,12 +210,10 @@ export default function ServicesPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={0}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -242,12 +240,10 @@ export default function ServicesPage() {
                       direction="horizontal"
                       reverse={index % 2 === 0}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={0.3 * (index + 1)}
                     >
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
                         <category.icon
@@ -278,12 +274,10 @@ export default function ServicesPage() {
                     direction="horizontal"
                     reverse={index % 2 === 0}
                     duration={1.5}
-                    ease="bounce.out"
                     initialOpacity={0}
                     animateOpacity={true}
                     scale={1}
                     threshold={0.2}
-                    delay={0.6 + 0.3 * index}
                   >
                     <div
                       className="group relative bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 hover:scale-[1.02]"
@@ -376,12 +370,10 @@ export default function ServicesPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={3}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -434,12 +426,10 @@ export default function ServicesPage() {
                       direction="horizontal"
                       reverse={index % 2 === 0}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={3.3 + 0.3 * index}
                     >
                       <div className="text-center group">
                         <div className="relative mb-6">
@@ -474,12 +464,10 @@ export default function ServicesPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={4.5}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -520,12 +508,10 @@ export default function ServicesPage() {
                         direction="horizontal"
                         reverse={false}
                         duration={1.5}
-                        ease="bounce.out"
                         initialOpacity={0}
                         animateOpacity={true}
                         scale={1}
                         threshold={0.2}
-                        delay={4.8 + 0.3 * index}
                       >
                         <div className="flex items-start">
                           <div
@@ -549,12 +535,10 @@ export default function ServicesPage() {
                   direction="horizontal"
                   reverse={true}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={5.7}
                 >
                   <div className="relative">
                     <div className="aspect-square bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative group">
@@ -598,12 +582,10 @@ export default function ServicesPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={6}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <div className="bg-gradient-to-r from-purple-600/10 to-blue-600/10 backdrop-blur-sm rounded-3xl p-12 border border-white/10">

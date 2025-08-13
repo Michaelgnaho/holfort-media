@@ -14,7 +14,8 @@ import {
   Calendar,
 } from "lucide-react";
 import Image from "next/image";
-import logo from "@/holfort-logo.jpg"; // Adjust the path as necessary
+import logo from "@/holfort-logo.jpg";
+// Adjust the path as necessary
 
 // Navigation items configuration
 const navigationItems = [

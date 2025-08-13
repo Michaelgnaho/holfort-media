@@ -142,12 +142,10 @@ export default function ContactPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={0}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -188,12 +186,10 @@ export default function ContactPage() {
                       direction="horizontal"
                       reverse={index % 2 === 0}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={0.3 * (index + 1)}
                     >
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-all duration-300">
                         <contact.icon
@@ -222,12 +218,10 @@ export default function ContactPage() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={1.2}
               >
                 <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl">
                   <div className="mb-8">
@@ -249,12 +243,10 @@ export default function ContactPage() {
                       direction="vertical"
                       reverse={false}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={1.5}
                     >
                       <div className="mb-6 bg-green-600/20 border border-green-600/30 rounded-2xl p-4 flex items-center">
                         <CheckCircle className="w-6 h-6 text-green-400 mr-3" />
@@ -276,12 +268,10 @@ export default function ContactPage() {
                       direction="horizontal"
                       reverse={false}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={1.8}
                     >
                       <div className="grid grid-cols-2 gap-4 mb-6">
                         <label
@@ -343,12 +333,10 @@ export default function ContactPage() {
                       direction="horizontal"
                       reverse={false}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={2.1}
                     >
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
@@ -390,12 +378,10 @@ export default function ContactPage() {
                       direction="horizontal"
                       reverse={false}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={2.4}
                     >
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
@@ -435,12 +421,10 @@ export default function ContactPage() {
                       direction="horizontal"
                       reverse={false}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={2.7}
                     >
                       <div>
                         <label className="text-white font-semibold mb-2 flex items-center">
@@ -475,12 +459,10 @@ export default function ContactPage() {
                       direction="horizontal"
                       reverse={false}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={3.0}
                     >
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
@@ -541,12 +523,10 @@ export default function ContactPage() {
                       direction="horizontal"
                       reverse={false}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={3.3}
                     >
                       <div>
                         <label className="text-white font-semibold mb-2 flex items-center">
@@ -570,12 +550,10 @@ export default function ContactPage() {
                       direction="horizontal"
                       reverse={false}
                       duration={1.5}
-                      ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity={true}
                       scale={1}
                       threshold={0.2}
-                      delay={3.6}
                     >
                       <button
                         type="submit"
@@ -607,12 +585,10 @@ export default function ContactPage() {
                   direction="horizontal"
                   reverse={true}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={1.2}
                 >
                   <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl">
                     <h3 className="text-3xl font-bold text-white mb-6">
@@ -651,12 +627,10 @@ export default function ContactPage() {
                           direction="horizontal"
                           reverse={true}
                           duration={1.5}
-                          ease="bounce.out"
                           initialOpacity={0}
                           animateOpacity={true}
                           scale={1}
                           threshold={0.2}
-                          delay={1.5 + 0.3 * index}
                         >
                           <div className="flex items-start">
                             <div
@@ -685,12 +659,10 @@ export default function ContactPage() {
                   direction="horizontal"
                   reverse={true}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={2.4}
                 >
                   <div className="bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
                     <div className="p-6 pb-0">
@@ -725,12 +697,10 @@ export default function ContactPage() {
                   direction="horizontal"
                   reverse={true}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={2.7}
                 >
                   <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl">
                     <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
@@ -770,12 +740,10 @@ export default function ContactPage() {
                           direction="horizontal"
                           reverse={true}
                           duration={1.5}
-                          ease="bounce.out"
                           initialOpacity={0}
                           animateOpacity={true}
                           scale={1}
                           threshold={0.2}
-                          delay={3.0 + 0.3 * index}
                         >
                           <a
                             href="#"
@@ -812,12 +780,10 @@ export default function ContactPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={4.2}
           >
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -857,12 +823,10 @@ export default function ContactPage() {
                     direction="horizontal"
                     reverse={index % 2 === 0}
                     duration={1.5}
-                    ease="bounce.out"
                     initialOpacity={0}
                     animateOpacity={true}
                     scale={1}
                     threshold={0.2}
-                    delay={4.5 + 0.3 * index}
                   >
                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300">
                       <div className="p-6">

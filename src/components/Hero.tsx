@@ -31,14 +31,11 @@ export default function Hero() {
         <AnimatedContent
           distance={100}
           direction="horizontal"
-          reverse={false}
+          reverse={true}
           duration={1.5}
-          ease="bounce.out"
           initialOpacity={0}
           animateOpacity={true}
-          scale={1}
           threshold={0.2}
-          delay={0}
         >
           <div className="flex-1 text-center lg:text-left mb-8 lg:mb-0">
             {/* Main Heading */}
@@ -89,7 +86,6 @@ export default function Hero() {
           direction="horizontal"
           reverse={false}
           duration={1.5}
-          ease="bounce.out"
           initialOpacity={0}
           animateOpacity={true}
           scale={1}
@@ -123,12 +119,10 @@ export default function Hero() {
         direction="vertical"
         reverse={false}
         duration={1.5}
-        ease="bounce.out"
         initialOpacity={0}
         animateOpacity={true}
         scale={1}
         threshold={0.2}
-        delay={0.6}
       >
         <div className="absolute pt-10 bottom-8 left-1/2 transform -translate-x-1/2 z-20">
           <div className="text-center">

@@ -64,12 +64,10 @@ export default function ServicesSection() {
           direction="vertical"
           reverse={false}
           duration={1.5}
-          ease="bounce.out"
           initialOpacity={0}
           animateOpacity={true}
           scale={1}
           threshold={0.2}
-          delay={0}
         >
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
@@ -98,12 +96,10 @@ export default function ServicesSection() {
                   direction="horizontal"
                   reverse={false}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={0.3 * (index + 1)}
                 >
                   <div
                     className={`bg-gradient-to-br ${service.bgColor} backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-300 group`}
@@ -135,12 +131,10 @@ export default function ServicesSection() {
             direction="horizontal"
             reverse={true}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={1.2}
           >
             <div className="relative">
               <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
@@ -191,12 +185,10 @@ export default function ServicesSection() {
           direction="vertical"
           reverse={false}
           duration={1.5}
-          ease="bounce.out"
           initialOpacity={0}
           animateOpacity={true}
           scale={1}
           threshold={0.2}
-          delay={1.5}
         >
           <div className="mb-20">
             <h3 className="text-2xl font-bold text-white text-center mb-8">
@@ -208,12 +200,10 @@ export default function ServicesSection() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={1.8}
               >
                 <div className="relative group">
                   <div className="aspect-square bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-2xl overflow-hidden border border-white/20 shadow-xl">
@@ -234,12 +224,10 @@ export default function ServicesSection() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={2.1}
               >
                 <div className="relative group">
                   <div className="aspect-square bg-gradient-to-br from-blue-600/30 to-indigo-600/30 rounded-2xl overflow-hidden border border-white/20 shadow-xl">
@@ -260,12 +248,10 @@ export default function ServicesSection() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={2.4}
               >
                 <div className="relative group">
                   <div className="aspect-square bg-gradient-to-br from-indigo-600/30 to-purple-600/30 rounded-2xl overflow-hidden border border-white/20 shadow-xl">
@@ -290,12 +276,10 @@ export default function ServicesSection() {
           direction="vertical"
           reverse={false}
           duration={1.5}
-          ease="bounce.out"
           initialOpacity={0}
           animateOpacity={true}
           scale={1}
           threshold={0.2}
-          delay={2.7}
         >
           <div className="text-center">
             <h3 className="text-3xl font-bold text-white mb-6">

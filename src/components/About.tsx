@@ -29,12 +29,10 @@ export default function AboutSection() {
           direction="vertical"
           reverse={false}
           duration={1.5}
-          ease="bounce.out"
           initialOpacity={0}
           animateOpacity={true}
           scale={1}
           threshold={0.2}
-          delay={0}
         >
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
@@ -59,12 +57,10 @@ export default function AboutSection() {
               direction="horizontal"
               reverse={false}
               duration={1.5}
-              ease="bounce.out"
               initialOpacity={0}
               animateOpacity={true}
               scale={1}
               threshold={0.2}
-              delay={0.3}
             >
               <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl">
                 <div className="flex items-center mb-6">
@@ -86,12 +82,10 @@ export default function AboutSection() {
               direction="horizontal"
               reverse={false}
               duration={1.5}
-              ease="bounce.out"
               initialOpacity={0}
               animateOpacity={true}
               scale={1}
               threshold={0.2}
-              delay={0.6}
             >
               <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl">
                 <div className="flex items-center mb-6">
@@ -114,12 +108,10 @@ export default function AboutSection() {
             direction="horizontal"
             reverse={true}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={0.9}
           >
             <div className="relative">
               <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl overflow-hidden border border-white/20 shadow-2xl relative">
@@ -146,12 +138,10 @@ export default function AboutSection() {
           direction="vertical"
           reverse={false}
           duration={1.5}
-          ease="bounce.out"
           initialOpacity={0}
           animateOpacity={true}
           scale={1}
           threshold={0.2}
-          delay={1.2}
         >
           <div className="mb-20">
             <h3 className="text-3xl font-bold text-white text-center mb-12">
@@ -163,12 +153,10 @@ export default function AboutSection() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={1.5}
               >
                 <div className="bg-gradient-to-br from-purple-600/20 to-blue-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
                   <div className="aspect-video mb-4 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-xl overflow-hidden relative">
@@ -193,12 +181,10 @@ export default function AboutSection() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={1.8}
               >
                 <div className="bg-gradient-to-br from-blue-600/20 to-indigo-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
                   <div className="aspect-video mb-4 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl overflow-hidden relative">
@@ -223,12 +209,10 @@ export default function AboutSection() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={2.1}
               >
                 <div className="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
                   <div className="aspect-video mb-4 bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 rounded-xl overflow-hidden relative">
@@ -257,12 +241,10 @@ export default function AboutSection() {
           direction="vertical"
           reverse={false}
           duration={1.5}
-          ease="bounce.out"
           initialOpacity={0}
           animateOpacity={true}
           scale={1}
           threshold={0.2}
-          delay={2.4}
         >
           <div className="mb-32">
             <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto px-6">
@@ -271,12 +253,10 @@ export default function AboutSection() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={2.7}
               >
                 <div className="group relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -311,12 +291,10 @@ export default function AboutSection() {
                 direction="horizontal"
                 reverse={true}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={3.0}
               >
                 <div className="group relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -361,12 +339,10 @@ export default function AboutSection() {
           direction="vertical"
           reverse={false}
           duration={1.5}
-          ease="bounce.out"
           initialOpacity={0}
           animateOpacity={true}
           scale={1}
           threshold={0.2}
-          delay={3.3}
         >
           <div className="text-center">
             <h3 className="text-3xl font-bold text-white mb-6">

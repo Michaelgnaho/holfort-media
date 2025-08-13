@@ -55,12 +55,10 @@ export default function AboutPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={0}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -90,12 +88,10 @@ export default function AboutPage() {
                   direction="horizontal"
                   reverse={false}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={0.3}
                 >
                   <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl group hover:bg-white/15 transition-all duration-500">
                     <div className="flex items-center mb-6">
@@ -119,12 +115,10 @@ export default function AboutPage() {
                   direction="horizontal"
                   reverse={false}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={0.6}
                 >
                   <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl group hover:bg-white/15 transition-all duration-500">
                     <div className="flex items-center mb-6">
@@ -148,12 +142,10 @@ export default function AboutPage() {
                   direction="horizontal"
                   reverse={false}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={0.9}
                 >
                   <div className="bg-gradient-to-br from-purple-600/20 to-blue-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                     <h4 className="text-xl font-semibold text-white mb-4 flex items-center">
@@ -187,12 +179,10 @@ export default function AboutPage() {
                 direction="horizontal"
                 reverse={true}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={1.2}
               >
                 <div className="relative">
                   <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl overflow-hidden border border-white/20 shadow-2xl relative group">
@@ -226,12 +216,10 @@ export default function AboutPage() {
               direction="vertical"
               reverse={false}
               duration={1.5}
-              ease="bounce.out"
               initialOpacity={0}
               animateOpacity={true}
               scale={1}
               threshold={0.2}
-              delay={1.5}
             >
               <div className="text-center mb-16">
                 <h2 className="text-5xl font-bold text-white mb-6">
@@ -250,12 +238,10 @@ export default function AboutPage() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={1.8}
               >
                 <div className="space-y-6">
                   <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
@@ -298,12 +284,10 @@ export default function AboutPage() {
                 direction="horizontal"
                 reverse={true}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={2.1}
               >
                 <div className="relative">
                   <div className="aspect-square bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative group">
@@ -334,12 +318,10 @@ export default function AboutPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={2.4}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-4xl font-bold text-white text-center mb-12">
@@ -354,12 +336,10 @@ export default function AboutPage() {
                   direction="horizontal"
                   reverse={false}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={2.7}
                 >
                   <div className="bg-gradient-to-br from-purple-600/20 to-blue-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center group hover:bg-white/10 transition-all duration-300">
                     <div className="aspect-video mb-4 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-xl overflow-hidden relative">
@@ -385,12 +365,10 @@ export default function AboutPage() {
                   direction="horizontal"
                   reverse={false}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={3.0}
                 >
                   <div className="bg-gradient-to-br from-blue-600/20 to-indigo-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center group hover:bg-white/10 transition-all duration-300">
                     <div className="aspect-video mb-4 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl overflow-hidden relative">
@@ -415,12 +393,10 @@ export default function AboutPage() {
                   direction="horizontal"
                   reverse={false}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={3.3}
                 >
                   <div className="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center group hover:bg-white/10 transition-all duration-300">
                     <div className="aspect-video mb-4 bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 rounded-xl overflow-hidden relative">
@@ -452,12 +428,10 @@ export default function AboutPage() {
               direction="vertical"
               reverse={false}
               duration={1.5}
-              ease="bounce.out"
               initialOpacity={0}
               animateOpacity={true}
               scale={1}
               threshold={0.2}
-              delay={3.6}
             >
               <div className="text-center mb-16">
                 <h2 className="text-5xl font-bold text-white mb-6">
@@ -479,12 +453,10 @@ export default function AboutPage() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={3.9}
               >
                 <div className="group">
                   <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500">
@@ -510,12 +482,10 @@ export default function AboutPage() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={4.2}
               >
                 <div className="group">
                   <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500">
@@ -541,12 +511,10 @@ export default function AboutPage() {
                 direction="horizontal"
                 reverse={false}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={4.5}
               >
                 <div className="group">
                   <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500">
@@ -578,12 +546,10 @@ export default function AboutPage() {
               direction="vertical"
               reverse={false}
               duration={1.5}
-              ease="bounce.out"
               initialOpacity={0}
               animateOpacity={true}
               scale={1}
               threshold={0.2}
-              delay={4.8}
             >
               <div className="text-center mb-16">
                 <h2 className="text-5xl font-bold text-white mb-6">
@@ -603,12 +569,10 @@ export default function AboutPage() {
                   direction="horizontal"
                   reverse={false}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={5.1}
                 >
                   <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
                     <div className="flex items-center mb-4">
@@ -630,12 +594,10 @@ export default function AboutPage() {
                   direction="horizontal"
                   reverse={false}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={5.4}
                 >
                   <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
                     <div className="flex items-center mb-4">
@@ -656,12 +618,10 @@ export default function AboutPage() {
                   direction="horizontal"
                   reverse={false}
                   duration={1.5}
-                  ease="bounce.out"
                   initialOpacity={0}
                   animateOpacity={true}
                   scale={1}
                   threshold={0.2}
-                  delay={5.7}
                 >
                   <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
                     <div className="flex items-center mb-4">
@@ -685,12 +645,10 @@ export default function AboutPage() {
                 direction="horizontal"
                 reverse={true}
                 duration={1.5}
-                ease="bounce.out"
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
                 threshold={0.2}
-                delay={6.0}
               >
                 <div className="relative">
                   <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative group">
@@ -721,12 +679,10 @@ export default function AboutPage() {
             direction="vertical"
             reverse={false}
             duration={1.5}
-            ease="bounce.out"
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
             threshold={0.2}
-            delay={6.3}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <h3 className="text-4xl font-bold text-white mb-6">
