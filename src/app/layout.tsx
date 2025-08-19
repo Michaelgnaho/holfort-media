@@ -42,11 +42,11 @@ export const metadata: Metadata = {
     title: "Holfort Media | Innovative Digital Media Solutions",
     description:
       "Empowering brands with bespoke media strategies, creative content, and data-driven campaigns to maximize digital impact and growth.",
-    url: "https://www.holfortmedia.com",
+    url: "https://www.holfortmedia.com.ng",
     siteName: "Holfort Media",
     images: [
       {
-        url: "https://www.holfortmedia.com/og-image.jpg",
+        url: "https://www.holfortmedia.com.ng/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Holfort Media - Digital Media Agency",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Holfort Media | Innovative Digital Media Solutions",
     description:
       "Transform your brand with Holfort Media’s expert digital strategies, content creation, and media consulting services.",
-    images: ["https://www.holfortmedia.com/twitter-image.jpg"],
+    images: ["https://www.holfortmedia.com.ng/twitter-image.jpg"],
   },
 };
 
@@ -84,8 +84,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Holfort Media",
-              url: "https://www.holfortmedia.com",
-              logo: "https://www.holfortmedia.com/logo.png",
+              url: "https://www.holfortmedia.com.ng.ng",
+              logo: "https://www.holfortmedia.com.ng.ng/logo.png",
               description:
                 "Holfort Media is a leading digital media agency in Lagos, Nigeria, offering innovative media consulting, social media management, influencer marketing, content creation, and more to transform brands globally.",
               address: {
@@ -122,25 +122,25 @@ export default function RootLayout({
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://www.holfortmedia.com",
+                  item: "https://www.holfortmedia.com.ng.ng",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "Services",
-                  item: "https://www.holfortmedia.com/services",
+                  item: "https://www.holfortmedia.com.ng.ng/services",
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
                   name: "Portfolio",
-                  item: "https://www.holfortmedia.com/portfolio",
+                  item: "https://www.holfortmedia.com.ng.ng/portfolio",
                 },
                 {
                   "@type": "ListItem",
                   position: 4,
                   name: "Contact",
-                  item: "https://www.holfortmedia.com/contact",
+                  item: "https://www.holfortmedia.com.ng.ng/contact",
                 },
               ],
             }),
