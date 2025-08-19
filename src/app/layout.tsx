@@ -1,5 +1,3 @@
-
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -16,7 +14,10 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
+<meta
+  name="google-site-verification"
+  content="2nwzSeikUG3mM5NWPUfaTZh69XFWxBD8E5GytLCPbOw"
+/>;
 export const metadata: Metadata = {
   title: "Holfort Media | Digital Media Agency for Innovative Brand Solutions",
   description:
@@ -36,6 +37,7 @@ export const metadata: Metadata = {
     "Lagos media agency",
   ],
   robots: "index, follow",
+
   openGraph: {
     title: "Holfort Media | Innovative Digital Media Solutions",
     description:
@@ -71,6 +73,10 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         {/* Structured Data for Organization */}
+        <meta
+          name="google-site-verification"
+          content="2nwzSeikUG3mM5NWPUfaTZh69XFWxBD8E5GytLCPbOw"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
