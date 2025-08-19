@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +13,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-<meta
-  name="google-site-verification"
-  content="2nwzSeikUG3mM5NWPUfaTZh69XFWxBD8E5GytLCPbOw"
-/>;
+
 export const metadata: Metadata = {
   title: "Holfort Media | Digital Media Agency for Innovative Brand Solutions",
   description:
@@ -37,7 +33,10 @@ export const metadata: Metadata = {
     "Lagos media agency",
   ],
   robots: "index, follow",
-
+  // Add Google verification here
+  verification: {
+    google: "2nwzSeikUG3mM5NWPUfaTZh69XFWxBD8E5GytLCPbOw",
+  },
   openGraph: {
     title: "Holfort Media | Innovative Digital Media Solutions",
     description:
@@ -59,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Holfort Media | Innovative Digital Media Solutions",
     description:
-      "Transform your brand with Holfort Media’s expert digital strategies, content creation, and media consulting services.",
+      "Transform your brand with Holfort Media's expert digital strategies, content creation, and media consulting services.",
     images: ["https://www.holfortmedia.com.ng/twitter-image.jpg"],
   },
 };
@@ -71,12 +70,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* Structured Data for Organization */}
-        <meta
-          name="google-site-verification"
-          content="2nwzSeikUG3mM5NWPUfaTZh69XFWxBD8E5GytLCPbOw"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -84,8 +79,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Holfort Media",
-              url: "https://www.holfortmedia.com.ng.ng",
-              logo: "https://www.holfortmedia.com.ng.ng/logo.png",
+              url: "https://www.holfortmedia.com.ng", // Fixed double .ng
+              logo: "https://www.holfortmedia.com.ng/logo.png", // Fixed double .ng
               description:
                 "Holfort Media is a leading digital media agency in Lagos, Nigeria, offering innovative media consulting, social media management, influencer marketing, content creation, and more to transform brands globally.",
               address: {
@@ -122,31 +117,31 @@ export default function RootLayout({
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://www.holfortmedia.com.ng.ng",
+                  item: "https://www.holfortmedia.com.ng", // Fixed double .ng
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "Services",
-                  item: "https://www.holfortmedia.com.ng.ng/services",
+                  item: "https://www.holfortmedia.com.ng/services", // Fixed double .ng
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
                   name: "Portfolio",
-                  item: "https://www.holfortmedia.com.ng.ng/portfolio",
+                  item: "https://www.holfortmedia.com.ng/portfolio", // Fixed double .ng
                 },
                 {
                   "@type": "ListItem",
                   position: 4,
                   name: "Contact",
-                  item: "https://www.holfortmedia.com.ng.ng/contact",
+                  item: "https://www.holfortmedia.com.ng/contact", // Fixed double .ng
                 },
               ],
             }),
           }}
         />
-      </Head>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
