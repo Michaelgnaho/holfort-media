@@ -83,6 +83,7 @@ services"
                 autoPlay
                 loop
                 muted
+                playsInline
               />
             </div>
           </div>

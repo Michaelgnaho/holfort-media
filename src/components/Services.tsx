@@ -192,6 +192,7 @@ export default function ServicesSection() {
                           autoPlay
                           loop
                           muted
+                          playsInline
                         />
                       </div>
                     </div>
@@ -219,6 +220,7 @@ export default function ServicesSection() {
                           autoPlay
                           loop
                           muted
+                          playsInline
                         />
                       </div>
                     </div>
@@ -246,6 +248,7 @@ export default function ServicesSection() {
                           autoPlay
                           loop
                           muted
+                          playsInline
                         />
                       </div>
                     </div>
