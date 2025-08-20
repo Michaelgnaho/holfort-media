@@ -119,18 +119,14 @@ export default function AboutSection() {
           >
             <div className="relative">
               <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl overflow-hidden border border-white/20 shadow-2xl relative">
-                <Image
-                  src="https://i.pinimg.com/1200x/72/e3/83/72e38320a669ebb2cee4fe17f4fe5d92.jpg"
-                  alt="Holfort Media team or workspace"
-                  fill
-                  className="object-cover"
+                <Video
+                  src={AboutVid}
+                  className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                 />
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-6 shadow-2xl">
-                <div className="text-center">
-                  <h4 className="text-white font-bold text-2xl">50+</h4>
-                  <p className="text-white/90 text-sm">Brands Transformed</p>
-                </div>
               </div>
             </div>
           </AnimatedContent>
@@ -163,14 +159,12 @@ export default function AboutSection() {
                 threshold={0.2}
               >
                 <div className="bg-gradient-to-br from-purple-600/20 to-blue-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
-                  <div className="aspect-video mb-4 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-xl overflow-hidden relative">
-                    <Video
-                      src={AboutVid}
-                      className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
+                  <div className="aspect-video mb-4 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl overflow-hidden relative">
+                    <Image
+                      src="https://i.pinimg.com/736x/3a/23/85/3a23856a10e4182f2abb660f1aecfc4b.jpg"
+                      alt="Brand Strategy"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   <h4 className="text-xl font-semibold text-white mb-3">

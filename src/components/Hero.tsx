@@ -95,18 +95,15 @@ export default function Hero() {
           <div className="flex-shrink-0 w-full max-w-[80%] sm:max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm mx-auto lg:mx-0 lg:ml-8">
             <div className="relative">
               {/* Video Container - Responsive aspect ratio */}
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 shadow-2xl">
+              <div className="relative  backdrop-blur-sm rounded-2xl p-2 border  shadow-2xl">
                 <Video
                   src={HeroVid}
-                  className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                  className="w-full rounded-xl shadow-xl  object-cover"
                   autoPlay
                   muted
                   loop
                   playsInline
                 />
-                <div className="mt-3 text-center">
-                  <p className="text-white/80 text-sm">Our Story</p>
-                </div>
               </div>
             </div>
           </div>
