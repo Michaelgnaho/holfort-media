@@ -7,8 +7,23 @@ import Video from "next-video";
 import HeroVid from "../../videos/Holfort_mkt_Vid1.mp4";
 import { ArrowRight } from "lucide-react";
 import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
+import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
+  const videoRef = useRef(null);
+  const [isIOS, setIsIOS] = useState(false);
+
+  useEffect(() => {
+    // Detect iOS
+    const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    setIsIOS(iOS);
+
+    // Force video load on iOS
+    if (iOS && videoRef.current) {
+      videoRef.current.load();
+    }
+  }, []);
+
   return (
     <div className="relative w-screen min-h-screen overflow-hidden">
       {/* Background Layer - Silk Animation */}
@@ -94,16 +109,61 @@ export default function Hero() {
         >
           <div className="flex-shrink-0 w-full max-w-[80%] sm:max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm mx-auto lg:mx-0 lg:ml-8">
             <div className="relative">
-              {/* Video Container - Responsive aspect ratio */}
-              <div className="relative  backdrop-blur-sm rounded-2xl p-2 border  shadow-2xl">
+              {/* Video Container - iOS Compatible */}
+              <div className="relative backdrop-blur-sm rounded-2xl p-2 border shadow-2xl">
+                {/* Primary Video Element */}
                 <Video
+                  ref={videoRef}
                   src={HeroVid}
-                  className="w-full rounded-xl shadow-xl  object-cover"
+                  className="w-full rounded-xl shadow-xl object-cover"
                   autoPlay
                   muted
                   loop
                   playsInline
+                  webkit-playsinline="true"
+                  controls={false}
+                  preload="metadata"
+                  style={{
+                    WebkitBackfaceVisibility: "hidden",
+                    WebkitTransform: "translate3d(0, 0, 0)",
+                  }}
                 />
+
+                {/* Fallback for iOS - Native HTML5 Video */}
+                <video
+                  ref={videoRef}
+                  className={`w-full rounded-xl shadow-xl object-cover ${
+                    isIOS ? "block" : "hidden"
+                  }`}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  webkit-playsinline="true"
+                  controls={false}
+                  preload="auto"
+                  style={{
+                    WebkitBackfaceVisibility: "hidden",
+                    WebkitTransform: "translate3d(0, 0, 0)",
+                  }}
+                  onLoadStart={() => {
+                    // Force play on iOS
+                    if (videoRef.current && isIOS) {
+                      videoRef.current.play().catch(console.log);
+                    }
+                  }}
+                >
+                  <source src={HeroVid} type="video/mp4" />
+                  <source
+                    src={HeroVid.replace(".mp4", ".webm")}
+                    type="video/webm"
+                  />
+                  <source
+                    src={HeroVid.replace(".mp4", ".mov")}
+                    type="video/quicktime"
+                  />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
