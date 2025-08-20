@@ -272,15 +272,6 @@ export default function AboutSection() {
                         playsInline
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                      <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                        <h3 className="text-2xl font-bold mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
-                          Strategic Planning
-                        </h3>
-                        <p className="text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200">
-                          Comprehensive strategic solutions for sustainable
-                          growth
-                        </p>
-                      </div>
                     </div>
                     <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-purple-400/50 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-blue-400/50 rounded-br-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -311,15 +302,6 @@ export default function AboutSection() {
                         loop
                         playsInline
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                      <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                        <h3 className="text-2xl font-bold mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
-                          Results Delivery
-                        </h3>
-                        <p className="text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200">
-                          Measurable outcomes that drive business transformation
-                        </p>
-                      </div>
                     </div>
                     <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-blue-400/50 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-indigo-400/50 rounded-br-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
