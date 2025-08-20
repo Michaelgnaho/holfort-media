@@ -121,7 +121,7 @@ export default function AboutSection() {
               <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl overflow-hidden border border-white/20 shadow-2xl relative">
                 <Video
                   src={AboutVid}
-                  className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                  className="w-full h-full rounded-xl shadow-xl  object-cover"
                   autoPlay
                   muted
                   loop
