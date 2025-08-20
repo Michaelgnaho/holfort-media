@@ -3,6 +3,8 @@
 import Silk from "@/blocks/Backgrounds/Silk/Silk";
 import TextType from "@/blocks/TextAnimations/TextType/TextType";
 import Link from "next/link";
+import Video from "next-video";
+import HeroVid from "../../videos/Holfort_mkt_Vid1.mp4";
 import { ArrowRight } from "lucide-react";
 import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
 
@@ -75,15 +77,12 @@ services"
           <div className="relative">
             {/* Video Container - Responsive aspect ratio */}
             <div className="relative backdrop-blur-sm rounded-2xl p-2 border shadow-2xl">
-              <video
-                src="/videos/Holfort_mkt_Vid1.mp4"
-                className="w-full h-full rounded-xl shadow-xl object-cover"
+              <Video
+                src={HeroVid}
+                className="w-full h-auto rounded-2xl shadow-lg"
                 autoPlay
-                muted
                 loop
-                playsInline
-                // Add webkit-playsinline for iOS compatibility
-                webkit-playsinline="true"
+                muted
               />
             </div>
           </div>
