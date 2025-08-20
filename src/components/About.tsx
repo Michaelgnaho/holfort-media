@@ -6,6 +6,10 @@ import { ArrowRight, Target, Lightbulb, Users, TrendingUp } from "lucide-react";
 import Silk from "@/blocks/Backgrounds/Silk/Silk";
 import Image from "next/image";
 import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
+import Video from "next-video";
+import AboutVid from "../../videos/Holfort_mkt_Vid2.mp4";
+import AboutVid1 from "../../videos/Holfort_mkt_Vid3.mp4";
+import AboutVid2 from "../../videos/Holfort_mkt_Vid4.mp4";
 
 export default function AboutSection() {
   return (
@@ -160,11 +164,13 @@ export default function AboutSection() {
               >
                 <div className="bg-gradient-to-br from-purple-600/20 to-blue-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
                   <div className="aspect-video mb-4 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-xl overflow-hidden relative">
-                    <Image
-                      src="https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg"
-                      alt="Brand Strategy"
-                      fill
-                      className="object-cover"
+                    <Video
+                      src={AboutVid}
+                      className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
                     />
                   </div>
                   <h4 className="text-xl font-semibold text-white mb-3">
@@ -263,11 +269,13 @@ export default function AboutSection() {
                   <div className="relative">
                     <div className="aspect-[16/10] rounded-3xl overflow-hidden relative border border-white/10 shadow-2xl backdrop-blur-sm">
                       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/40 via-purple-600/30 to-blue-600/40 opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
-                      <Image
-                        src="https://i.pinimg.com/736x/3c/0a/af/3c0aafbcd0d04d99fb33628ed0d9205e.jpg"
-                        alt="Strategic Planning"
-                        fill
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                      <Video
+                        src={AboutVid1}
+                        className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
@@ -301,11 +309,13 @@ export default function AboutSection() {
                   <div className="relative">
                     <div className="aspect-[16/10] rounded-3xl overflow-hidden relative border border-white/10 shadow-2xl backdrop-blur-sm">
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-blue-600/30 to-indigo-600/40 opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
-                      <Image
-                        src="https://i.pinimg.com/736x/e5/45/d8/e545d8423e84af8325eed1e87308d561.jpg"
-                        alt="Results Delivery"
-                        fill
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                      <Video
+                        src={AboutVid2}
+                        className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">

@@ -4,7 +4,7 @@ import Silk from "@/blocks/Backgrounds/Silk/Silk";
 import TextType from "@/blocks/TextAnimations/TextType/TextType";
 import Link from "next/link";
 import Video from "next-video";
-import HeroVid from "../../videos/hero-vid.mp4";
+import HeroVid from "../../videos/Holfort_mkt_Vid1.mp4";
 import { ArrowRight } from "lucide-react";
 import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
 

@@ -61,7 +61,7 @@ const services = [
       "Cross-platform integration planning",
     ],
     image:
-      "https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg",
+      "https://i.pinimg.com/1200x/73/43/47/734347b360f96243f453eb930a94f958.jpg",
     gradient: "from-purple-600 to-purple-700",
     accentColor: "purple",
   },
@@ -79,7 +79,7 @@ const services = [
       "Brand voice development",
     ],
     image:
-      "https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg",
+      "https://i.pinimg.com/736x/5b/fb/e5/5bfbe5192b71b5140287205a98c6540f.jpg",
     gradient: "from-blue-600 to-blue-700",
     accentColor: "blue",
   },
@@ -97,7 +97,7 @@ const services = [
       "Long-term relationship building",
     ],
     image:
-      "https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg",
+      "https://i.pinimg.com/736x/6a/3f/8f/6a3f8fd7163c1885132a781e5d8d7c57.jpg",
     gradient: "from-indigo-600 to-indigo-700",
     accentColor: "indigo",
   },
@@ -115,7 +115,7 @@ const services = [
       "Multi-format content adaptation",
     ],
     image:
-      "https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg",
+      "https://i.pinimg.com/736x/7e/fc/17/7efc17f38f5b493cb010f7dcade8d0ef.jpg",
     gradient: "from-pink-600 to-pink-700",
     accentColor: "pink",
   },
@@ -133,7 +133,7 @@ const services = [
       "Brand sentiment analysis",
     ],
     image:
-      "https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg",
+      "https://i.pinimg.com/736x/00/09/bb/0009bb9acaa35e8ab41e5360c2fdc947.jpg",
     gradient: "from-green-600 to-green-700",
     accentColor: "green",
   },
@@ -151,7 +151,7 @@ const services = [
       "Executive positioning",
     ],
     image:
-      "https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg",
+      "https://i.pinimg.com/736x/1f/32/65/1f3265e0dbc326823947dd41fe57d638.jpg",
     gradient: "from-teal-600 to-teal-700",
     accentColor: "teal",
   },
@@ -169,7 +169,7 @@ const services = [
       "Conversion tracking and reporting",
     ],
     image:
-      "https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg",
+      "https://i.pinimg.com/736x/04/bd/00/04bd00cec760d9dd7d4c1585ee9c521f.jpg",
     gradient: "from-orange-600 to-orange-700",
     accentColor: "orange",
   },
@@ -187,7 +187,7 @@ const services = [
       "Technical production support",
     ],
     image:
-      "https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg",
+      "https://i.pinimg.com/736x/29/65/14/2965149b4df80430362cc03200df17da.jpg",
     gradient: "from-red-600 to-red-700",
     accentColor: "red",
   },
