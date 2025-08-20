@@ -69,7 +69,7 @@ const portfolioItems = [
     type: "Wedding",
     client: "Mr & Mrs. Johnson",
     description:
-      "Comprehensive digital campaign launch for sustainable technology brand, achieving 300% increase in brand awareness.",
+      "Comprehensive wedding coverage including photography, videography, and live streaming for a memorable celebration.",
     image:
       "https://i.pinimg.com/736x/d5/2d/7c/d52d7cdd20736a01b0978e04ac276d39.jpg",
     results: {
@@ -135,8 +135,6 @@ export default function PortfolioPage() {
             distance={100}
             direction="vertical"
             reverse={false}
-            duration={1.5}
-            initialOpacity={0}
             animateOpacity={true}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -168,11 +166,8 @@ export default function PortfolioPage() {
                       distance={100}
                       direction="horizontal"
                       reverse={index % 2 === 0}
-                      duration={1.5}
-                      initialOpacity={0}
                       animateOpacity={true}
-                      scale={1}
-                      threshold={0.2}
+                      threshold={0.1}
                     >
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                         <h3 className="text-3xl font-bold text-white mb-2">
@@ -196,11 +191,8 @@ export default function PortfolioPage() {
             distance={100}
             direction="vertical"
             reverse={false}
-            duration={1.5}
-            initialOpacity={0}
             animateOpacity={true}
-            scale={1}
-            threshold={0.2}
+            threshold={0.1}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -222,11 +214,9 @@ export default function PortfolioPage() {
                     distance={100}
                     direction="horizontal"
                     reverse={index % 2 === 0}
-                    duration={1.5}
                     initialOpacity={0}
                     animateOpacity={true}
-                    scale={1}
-                    threshold={0.2}
+                    threshold={0.1}
                   >
                     <div className="group relative">
                       <div className="bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 hover:scale-[1.02]">
@@ -309,11 +299,9 @@ export default function PortfolioPage() {
             distance={100}
             direction="vertical"
             reverse={false}
-            duration={1.5}
             initialOpacity={0}
             animateOpacity={true}
-            scale={1}
-            threshold={0.2}
+            threshold={0.1}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col lg:flex-row justify-between items-center mb-12">
@@ -384,11 +372,9 @@ export default function PortfolioPage() {
                     distance={100}
                     direction="horizontal"
                     reverse={index % 2 === 0}
-                    duration={1.5}
                     initialOpacity={0}
                     animateOpacity={true}
-                    scale={1}
-                    threshold={0.2}
+                    threshold={0.1}
                   >
                     <div className="group">
                       <div
@@ -481,11 +467,9 @@ export default function PortfolioPage() {
             distance={100}
             direction="vertical"
             reverse={false}
-            duration={1.5}
             initialOpacity={0}
             animateOpacity={true}
-            scale={1}
-            threshold={0.2}
+            threshold={0.1}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -506,11 +490,9 @@ export default function PortfolioPage() {
                     distance={100}
                     direction="horizontal"
                     reverse={false}
-                    duration={1.5}
                     initialOpacity={0}
                     animateOpacity={true}
-                    scale={1}
-                    threshold={0.2}
+                    threshold={0.1}
                   >
                     <div>
                       <div className="flex items-center mb-6">
@@ -558,11 +540,9 @@ export default function PortfolioPage() {
                             distance={100}
                             direction="horizontal"
                             reverse={index % 2 === 0}
-                            duration={1.5}
                             initialOpacity={0}
                             animateOpacity={true}
-                            scale={1}
-                            threshold={0.2}
+                            threshold={0.1}
                           >
                             <div className="text-center p-4 bg-white/5 rounded-2xl border border-white/10">
                               <h4 className="text-3xl font-bold text-white mb-2">
@@ -585,11 +565,9 @@ export default function PortfolioPage() {
                     distance={100}
                     direction="horizontal"
                     reverse={true}
-                    duration={1.5}
                     initialOpacity={0}
                     animateOpacity={true}
-                    scale={1}
-                    threshold={0.2}
+                    threshold={0.1}
                   >
                     <div className="relative w-full max-w-full mx-auto">
                       <div className="aspect-[4/3] sm:aspect-[16/9] bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
@@ -619,11 +597,9 @@ export default function PortfolioPage() {
             distance={100}
             direction="vertical"
             reverse={false}
-            duration={1.5}
             initialOpacity={0}
             animateOpacity={true}
-            scale={1}
-            threshold={0.2}
+            threshold={0.1}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <div className="bg-gradient-to-r from-purple-600/10 to-blue-600/10 backdrop-blur-sm rounded-3xl p-12 border border-white/10">
