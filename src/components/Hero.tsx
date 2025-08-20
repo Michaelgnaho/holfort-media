@@ -80,7 +80,7 @@ export default function Hero() {
               <div className="relative  backdrop-blur-sm rounded-2xl p-2 border  shadow-2xl">
                 <Video
                   src={HeroVid}
-                  className="w-full rounded-xl shadow-xl  object-cover"
+                  className="w-full rounded-xl shadow-xl  object-fit"
                   autoPlay
                   muted
                   loop

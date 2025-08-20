@@ -206,7 +206,7 @@ export default function ServicesSection() {
                       <div className="text-center">
                         <Video
                           src={service1}
-                          className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                          className="w-full rounded-xl shadow-xl  object-contain"
                           autoPlay
                           muted
                           loop
@@ -234,7 +234,7 @@ export default function ServicesSection() {
                       <div className="text-center">
                         <Video
                           src={service2}
-                          className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                          className="w-full rounded-xl shadow-xl object-contain"
                           autoPlay
                           muted
                           loop
@@ -262,7 +262,7 @@ export default function ServicesSection() {
                       <div className="text-center">
                         <Video
                           src={service3}
-                          className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                          className="w-full rounded-xl shadow-xl  object-contain"
                           autoPlay
                           muted
                           loop
