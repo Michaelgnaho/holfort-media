@@ -57,7 +57,7 @@ export default function Footer() {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com/company/holfortmedia",
+      href: "https://linkedin.com/holfortmedia",
     },
     {
       name: "YouTube",
@@ -102,11 +102,11 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                   <Phone className="w-5 h-5 text-blue-400" />
-                  <span>+234 (0) 123 456 7890</span>
+                  <span>+2347013805937</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                   <Mail className="w-5 h-5 text-indigo-400" />
-                  <span>hello@holfortmedia.com</span>
+                  <span>holfortmedia@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                   <Clock className="w-5 h-5 text-purple-400" />
