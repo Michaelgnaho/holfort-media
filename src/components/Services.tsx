@@ -13,6 +13,11 @@ import {
 } from "lucide-react";
 import Silk from "@/blocks/Backgrounds/Silk/Silk";
 import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
+import Image from "next/image";
+import service1 from "../../videos/project-wedding.mp4";
+import service2 from "../../videos/hero-vid.mp4";
+import service3 from "../../videos/project_HOA.mp4";
+import Video from "next-video";
 
 export default function ServicesSection() {
   const featuredServices = [
@@ -181,14 +186,12 @@ export default function ServicesSection() {
                   <div className="aspect-square bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-2xl overflow-hidden border border-white/20 shadow-xl">
                     <div className="w-full h-full flex items-center justify-center">
                       <div className="text-center">
-                        <video
-                          src="/videos/project-wedding.mp4"
-                          className="w-full rounded-xl shadow-xl object-contain"
+                        <Video
+                          src={service1}
+                          className="w-full h-auto rounded-2xl shadow-lg"
                           autoPlay
-                          muted
                           loop
-                          playsInline
-                          webkit-playsinline="true"
+                          muted
                         />
                       </div>
                     </div>
@@ -210,14 +213,12 @@ export default function ServicesSection() {
                   <div className="aspect-square bg-gradient-to-br from-blue-600/30 to-indigo-600/30 rounded-2xl overflow-hidden border border-white/20 shadow-xl">
                     <div className="w-full h-full flex items-center justify-center">
                       <div className="text-center">
-                        <video
-                          src="/videos/hero-vid.mp4"
-                          className="w-full rounded-xl shadow-xl object-contain"
+                        <Video
+                          src={service2}
+                          className="w-full h-auto rounded-2xl shadow-lg"
                           autoPlay
-                          muted
                           loop
-                          playsInline
-                          webkit-playsinline="true"
+                          muted
                         />
                       </div>
                     </div>
@@ -239,14 +240,12 @@ export default function ServicesSection() {
                   <div className="aspect-square bg-gradient-to-br from-indigo-600/30 to-purple-600/30 rounded-2xl overflow-hidden border border-white/20 shadow-xl">
                     <div className="w-full h-full flex items-center justify-center">
                       <div className="text-center">
-                        <video
-                          src="/videos/project_HOA.mp4"
-                          className="w-full rounded-xl shadow-xl object-contain"
+                        <Video
+                          src={service3}
+                          className="w-full h-auto rounded-2xl shadow-lg"
                           autoPlay
-                          muted
                           loop
-                          playsInline
-                          webkit-playsinline="true"
+                          muted
                         />
                       </div>
                     </div>

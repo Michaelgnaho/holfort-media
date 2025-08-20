@@ -6,6 +6,10 @@ import { ArrowRight, Target, Lightbulb, Users, TrendingUp } from "lucide-react";
 import Silk from "@/blocks/Backgrounds/Silk/Silk";
 import Image from "next/image";
 import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
+import Video from "next-video";
+import AboutVid from "../../videos/Holfort_mkt_Vid2.mp4";
+import AboutVid1 from "../../videos/Holfort_mkt_Vid3.mp4";
+import AboutVid2 from "../../videos/Holfort_mkt_Vid4.mp4";
 
 export default function AboutSection() {
   return (
@@ -119,14 +123,12 @@ export default function AboutSection() {
           >
             <div className="relative">
               <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl overflow-hidden border border-white/20 shadow-2xl relative">
-                <video
-                  src="/videos/Holfort_mkt_Vid2.mp4"
-                  className="w-full h-full rounded-xl shadow-xl object-cover"
+                <Video
+                  src={AboutVid}
+                  className="w-full h-auto rounded-2xl shadow-lg"
                   autoPlay
-                  muted
                   loop
-                  playsInline
-                  webkit-playsinline="true"
+                  muted
                 />
               </div>
             </div>
@@ -270,14 +272,12 @@ export default function AboutSection() {
                   <div className="relative">
                     <div className="aspect-[16/10] rounded-3xl overflow-hidden relative border border-white/10 shadow-2xl backdrop-blur-sm">
                       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/40 via-purple-600/30 to-blue-600/40 opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
-                      <video
-                        src="/videos/Holfort_mkt_Vid4.mp4"
-                        className="w-full h-full rounded-xl shadow-xl object-contain"
+                      <Video
+                        src={AboutVid1}
+                        className="w-full h-auto rounded-2xl shadow-lg"
                         autoPlay
-                        muted
                         loop
-                        playsInline
-                        webkit-playsinline="true"
+                        muted
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     </div>
@@ -302,15 +302,6 @@ export default function AboutSection() {
                   <div className="relative">
                     <div className="aspect-[16/10] rounded-3xl overflow-hidden relative border border-white/10 shadow-2xl backdrop-blur-sm">
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-blue-600/30 to-indigo-600/40 opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
-                      <video
-                        src="/videos/Holfort_mkt_Vid3.mp4"
-                        className="w-full h-full rounded-xl shadow-xl object-contain"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        webkit-playsinline="true"
-                      />
                     </div>
                     <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-blue-400/50 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-indigo-400/50 rounded-br-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
