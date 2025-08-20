@@ -13,14 +13,14 @@ import AboutVid2 from "../../videos/Holfort_mkt_Vid4.mp4";
 
 export default function AboutSection() {
   return (
-    <section className="relative min-h-screen py-20 overflow-hidden">
+    <section className="relative min-h-screen py-16 sm:py-20 overflow-hidden">
       {/* Silk Background - Optimized for mobile */}
       <div className="absolute inset-0 z-0">
         <Silk
-          speed={2.5} // Reduced speed for mobile performance
+          speed={1.5} // Further reduced speed for better mobile performance
           scale={0.2}
           color="#582EFF"
-          noiseIntensity={2} // Reduced noise for smoother rendering
+          noiseIntensity={1} // Further reduced noise for smoother rendering
           rotation={0.35}
         />
       </div>
@@ -38,7 +38,7 @@ export default function AboutSection() {
           scale={1}
           threshold={0.2}
         >
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
               About{" "}
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
@@ -53,9 +53,9 @@ export default function AboutSection() {
         </AnimatedContent>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mb-16 sm:mb-20">
           {/* Left Column - Vision & Mission */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <AnimatedContent
               distance={100}
               direction="horizontal"
@@ -122,15 +122,16 @@ export default function AboutSection() {
             threshold={0.2}
           >
             <div className="relative">
-              <div className="aspect-[4/3] bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl overflow-hidden border border-white/20 shadow-2xl relative">
-                <Video
-                  src={AboutVid}
-                  className="w-full h-auto rounded-2xl shadow-lg"
-                  autoPlay
-                  loop
-                  muted
-                />
-              </div>
+              <Video
+                src={AboutVid}
+                className="w-full h-auto rounded-2xl shadow-lg object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                webkit-playsinline="true"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl"></div>
             </div>
           </AnimatedContent>
         </div>
@@ -146,7 +147,7 @@ export default function AboutSection() {
           scale={1}
           threshold={0.2}
         >
-          <div className="mb-20">
+          <div className="mb-16 sm:mb-20">
             <h3 className="text-2xl sm:text-3xl font-bold text-white text-center mb-12">
               What We Do Best
             </h3>
@@ -255,7 +256,7 @@ export default function AboutSection() {
           scale={1}
           threshold={0.2}
         >
-          <div className="mb-32">
+          <div className="mb-24 sm:mb-32">
             <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-7xl mx-auto px-6">
               <AnimatedContent
                 distance={100}
@@ -279,6 +280,7 @@ export default function AboutSection() {
                         loop
                         muted
                         playsInline
+                        webkit-playsinline="true"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     </div>
@@ -303,6 +305,16 @@ export default function AboutSection() {
                   <div className="relative">
                     <div className="aspect-[16/10] rounded-3xl overflow-hidden relative border border-white/10 shadow-2xl backdrop-blur-sm">
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-blue-600/30 to-indigo-600/40 opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+                      <Video
+                        src={AboutVid2}
+                        className="w-full h-auto rounded-2xl shadow-lg"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        webkit-playsinline="true"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     </div>
                     <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-blue-400/50 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-indigo-400/50 rounded-br-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -340,7 +352,7 @@ export default function AboutSection() {
             </p>
             <Link
               href="/about"
-              className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group touch-manipulation"
+              className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group touch-manipulation"
             >
               <span className="mr-3">Learn More About Us</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
