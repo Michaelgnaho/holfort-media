@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
+import Link from "next/link";
 
 // Silk Background Component (simplified version)
 const SilkBackground = () => (
@@ -349,7 +350,10 @@ export default function ServicesPage() {
                       <button
                         className={`w-full bg-gradient-to-r ${service.gradient} text-white font-semibold py-3 px-6 rounded-2xl hover:shadow-2xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center`}
                       >
-                        <span className="mr-2">Learn More</span>
+                        <Link href={`/contact`}>
+                          <span className="mr-2">Book Us</span>
+                        </Link>
+
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                       </button>
                       <div

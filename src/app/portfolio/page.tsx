@@ -45,12 +45,12 @@ const SilkBackground = () => (
 const portfolioItems = [
   {
     id: 1,
-    title: "Global Tech Summit 2024",
-    category: "Event Coverage",
+    title: "Igbogbo PVC Campaingn",
+    category: "Video Coverage",
     type: "event",
-    client: "TechVision Corp",
+    client: "Igbogbo Local Government",
     description:
-      "Complete media coverage and live streaming for Africa's largest technology conference, reaching 50K+ viewers worldwide.",
+      "Complete media coverage and live streaming A Message from the Executive Chairman, Igbogbo Baiyeku LCDA on PVC Collection",
     image:
       "https://i.pinimg.com/736x/3c/0a/af/3c0aafbcd0d04d99fb33628ed0d9205e.jpg",
     results: {
@@ -64,10 +64,10 @@ const portfolioItems = [
   },
   {
     id: 2,
-    title: "EcoGreen Brand Launch Campaign",
-    category: "Digital Campaign",
-    type: "campaign",
-    client: "EcoGreen Solutions",
+    title: "Wedding Coverage",
+    category: "Event Coverage",
+    type: "Wedding",
+    client: "Mr & Mrs. Johnson",
     description:
       "Comprehensive digital campaign launch for sustainable technology brand, achieving 300% increase in brand awareness.",
     image:
@@ -83,12 +83,12 @@ const portfolioItems = [
   },
   {
     id: 3,
-    title: "CEO Executive Positioning",
-    category: "Personal Branding",
+    title: "Mentorship Session With HOA ",
+    category: "Publicity Campaign",
     type: "branding",
-    client: "Fortune 500 Executive",
+    client: "HOA",
     description:
-      "Strategic personal branding campaign for C-suite executive, establishing thought leadership in fintech industry.",
+      "Strategic personal branding and PR campaign for HOA, enhancing online presence and engagement.",
     image:
       "https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg",
     results: {
@@ -99,63 +99,6 @@ const portfolioItems = [
     },
     tags: ["Personal Branding", "PR", "Content Strategy"],
     featured: true,
-  },
-  {
-    id: 4,
-    title: "Fashion Week Lagos Coverage",
-    category: "Event Coverage",
-    type: "event",
-    client: "Lagos Fashion Week",
-    description:
-      "Real-time social media coverage and content creation for Africa's premier fashion event.",
-    image:
-      "https://i.pinimg.com/736x/e5/45/d8/e545d8423e84af8325eed1e87308d561.jpg",
-    results: {
-      posts: "200+",
-      engagement: "95%",
-      hashtag: "#1 Trending",
-      coverage: "Live Updates",
-    },
-    tags: ["Social Media", "Content Creation", "Influencer Marketing"],
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Political Campaign Strategy",
-    category: "Political Media",
-    type: "campaign",
-    client: "State Government Campaign",
-    description:
-      "Comprehensive digital strategy and reputation management for gubernatorial campaign.",
-    image:
-      "https://i.pinimg.com/736x/3a/23/85/3a23856a10e4182f2abb660f1aecfc4b.jpg",
-    results: {
-      reach: "5M+",
-      sentiment: "+65%",
-      volunteers: "10K+",
-      outcome: "Victory",
-    },
-    tags: ["Political Strategy", "Digital PR", "Crisis Management"],
-    featured: true,
-  },
-  {
-    id: 6,
-    title: "Startup Growth Campaign",
-    category: "Growth Strategy",
-    type: "campaign",
-    client: "FinTech Startup",
-    description:
-      "360-degree growth strategy including influencer partnerships and viral content creation.",
-    image:
-      "https://i.pinimg.com/736x/72/e3/83/72e38320a669ebb2cee4fe17f4fe5d92.jpg",
-    results: {
-      users: "+500%",
-      downloads: "100K+",
-      funding: "$2M Raised",
-      valuation: "+400%",
-    },
-    tags: ["Growth Hacking", "Influencer Marketing", "Content Strategy"],
-    featured: false,
   },
 ];
 
