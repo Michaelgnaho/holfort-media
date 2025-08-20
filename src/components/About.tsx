@@ -264,8 +264,8 @@ export default function AboutSection() {
                     <div className="aspect-[16/10] rounded-3xl overflow-hidden relative border border-white/10 shadow-2xl backdrop-blur-sm">
                       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/40 via-purple-600/30 to-blue-600/40 opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
                       <Video
-                        src={AboutVid1}
-                        className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                        src={AboutVid2}
+                        className="w-full h-full rounded-xl shadow-xl object-cover"
                         autoPlay
                         muted
                         loop
@@ -305,7 +305,7 @@ export default function AboutSection() {
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-blue-600/30 to-indigo-600/40 opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
                       <Video
                         src={AboutVid2}
-                        className="w-full rounded-xl shadow-xl aspect-[9/16] object-cover"
+                        className="w-full h-full rounded-xl shadow-xl object-cover"
                         autoPlay
                         muted
                         loop

@@ -145,7 +145,6 @@ export default function ContactPage() {
             initialOpacity={0}
             animateOpacity={true}
             scale={1}
-            threshold={0.2}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -164,13 +163,13 @@ export default function ContactPage() {
                     {
                       icon: Phone,
                       title: "Call Us",
-                      value: "+234 (0) 123 456 789",
+                      value: "+2347013805937",
                       color: "purple",
                     },
                     {
                       icon: Mail,
                       title: "Email Us",
-                      value: "hello@holfortmedia.com",
+                      value: "holfortmedia@gmail.com",
                       color: "blue",
                     },
                     {
@@ -602,8 +601,7 @@ export default function ContactPage() {
                         {
                           icon: MapPin,
                           title: "Head Office",
-                          value:
-                            "123 Media Hub Street\nVictoria Island, Lagos\nNigeria, 100001",
+                          value: "Lagos\nNigeria, 100001",
                           gradient: "from-purple-500 to-purple-600",
                         },
                         {
@@ -617,7 +615,7 @@ export default function ContactPage() {
                           icon: Phone,
                           title: "Contact Details",
                           value:
-                            "Phone: +234 (0) 123 456 789\nEmail: hello@holfortmedia.com\nEmergency: +234 (0) 987 654 321",
+                            "Phone: +2347013805937\nEmail: holfortmedia@gmail.com\nEmergency: +2347013805937",
                           gradient: "from-indigo-500 to-indigo-600",
                         },
                       ].map((info, index) => (
@@ -654,42 +652,6 @@ export default function ContactPage() {
                 </AnimatedContent>
 
                 {/* Interactive Map */}
-                <AnimatedContent
-                  distance={100}
-                  direction="horizontal"
-                  reverse={true}
-                  duration={1.5}
-                  initialOpacity={0}
-                  animateOpacity={true}
-                  scale={1}
-                  threshold={0.2}
-                >
-                  <div className="bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
-                    <div className="p-6 pb-0">
-                      <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                        <MapPin className="w-6 h-6 mr-2 text-purple-400" />
-                        Find Us On Map
-                      </h3>
-                    </div>
-                    <div className="aspect-video bg-gradient-to-br from-gray-800/50 to-gray-900/50 relative">
-                      <div className="absolute inset-0 flex items-center justify-center bg-gray-800/30">
-                        <div className="text-center">
-                          <MapPin className="w-16 h-16 text-purple-400 mx-auto mb-4" />
-                          <h4 className="text-white font-semibold mb-2">
-                            Interactive Map
-                          </h4>
-                          <p className="text-gray-300 text-sm">
-                            Victoria Island, Lagos, Nigeria
-                          </p>
-                          <button className="mt-4 inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-6 py-3 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300">
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            View on Google Maps
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </AnimatedContent>
 
                 {/* Social Links */}
                 <AnimatedContent
