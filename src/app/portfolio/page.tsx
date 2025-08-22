@@ -462,7 +462,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* Case Study Spotlight */}
-        <section className="py-20">
+        {/* <section className="py-20">
           <AnimatedContent
             distance={100}
             direction="vertical"
@@ -589,7 +589,7 @@ export default function PortfolioPage() {
               </div>
             </div>
           </AnimatedContent>
-        </section>
+        </section> */}
 
         {/* Call to Action */}
         <section className="py-20">

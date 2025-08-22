@@ -12,6 +12,7 @@
   "dependencies": {
     "@mux/mux-node": "^12.4.0",
     "@mux/mux-player-react": "^3.5.3",
+    "@react-email/render": "^1.2.1",
     "@react-three/fiber": "^9.3.0",
     "gsap": "^3.13.0",
     "lucide-react": "^0.539.0",

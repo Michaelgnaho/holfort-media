@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Mail,
   Phone,
@@ -24,29 +23,58 @@ import {
 } from "lucide-react";
 import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
 
-// Silk Background Component
-const SilkBackground = () => (
-  <div className="absolute inset-0 overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-blue-900/30 to-indigo-900/50">
-      <div className="absolute inset-0 opacity-20">
-        {[...Array(25)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-white/10 animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              width: `${Math.random() * 4 + 1}px`,
-              height: `${Math.random() * 4 + 1}px`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${Math.random() * 3 + 2}s`,
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  </div>
-);
+// Fixed Silk Background Component
+// const SilkBackground = () => {
+//   const [particles, setParticles] = useState<
+//     Array<{
+//       id: number;
+//       left: string;
+//       top: string;
+//       width: string;
+//       height: string;
+//       animationDelay: string;
+//       animationDuration: string;
+//     }>
+//   >([]);
+
+//   useEffect(() => {
+//     // Generate particles only on client side to avoid hydration mismatch
+//     const generatedParticles = [...Array(25)].map((_, i) => ({
+//       id: i,
+//       left: `${Math.random() * 100}%`,
+//       top: `${Math.random() * 100}%`,
+//       width: `${Math.random() * 4 + 1}px`,
+//       height: `${Math.random() * 4 + 1}px`,
+//       animationDelay: `${Math.random() * 3}s`,
+//       animationDuration: `${Math.random() * 3 + 2}s`,
+//     }));
+
+//     setParticles(generatedParticles);
+//   }, []);
+
+//   return (
+//     <div className="absolute inset-0 overflow-hidden">
+//       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-blue-900/30 to-indigo-900/50">
+//         <div className="absolute inset-0 opacity-20">
+//           {particles.map((particle) => (
+//             <div
+//               key={particle.id}
+//               className="absolute rounded-full bg-white/10 animate-pulse"
+//               style={{
+//                 left: particle.left,
+//                 top: particle.top,
+//                 width: particle.width,
+//                 height: particle.height,
+//                 animationDelay: particle.animationDelay,
+//                 animationDuration: particle.animationDuration,
+//               }}
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -63,6 +91,7 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -75,9 +104,10 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
     try {
       // Validate required fields
@@ -90,8 +120,14 @@ export default function ContactPage() {
         throw new Error("Please fill in all required fields");
       }
 
-      // Send form data to API route
-      const response = await fetch("/api/send-email", {
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        throw new Error("Please enter a valid email address");
+      }
+
+      // Send request to correct API route
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -99,9 +135,17 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       });
 
+      // Handle response
       if (!response.ok) {
-        throw new Error("Failed to send message");
+        const errorData = await response.json().catch(() => null);
+        throw new Error(
+          errorData?.error ||
+            `Server error: ${response.status} ${response.statusText}`
+        );
       }
+
+      const result = await response.json();
+      console.log("Success:", result);
 
       // Show success message
       setIsSubmitted(true);
@@ -123,7 +167,11 @@ export default function ContactPage() {
       }, 3000);
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("There was an error sending your booking. Please try again.");
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Failed to send message. Please try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -159,7 +207,7 @@ export default function ContactPage() {
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
       {/* Silk Background */}
-      <SilkBackground />
+      {/* <SilkBackground /> */}
 
       {/* Content */}
       <div className="relative z-10">
@@ -289,7 +337,14 @@ export default function ContactPage() {
                     </AnimatedContent>
                   )}
 
+                  {error && (
+                    <div className="mb-6 bg-red-600/20 border border-red-600/30 rounded-2xl p-4">
+                      <p className="text-red-400 font-semibold">{error}</p>
+                    </div>
+                  )}
+
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Project Type Selection */}
                     <AnimatedContent
                       distance={100}
                       direction="horizontal"
@@ -355,6 +410,7 @@ export default function ContactPage() {
                       </div>
                     </AnimatedContent>
 
+                    {/* Name and Email */}
                     <AnimatedContent
                       distance={100}
                       direction="horizontal"
@@ -400,6 +456,7 @@ export default function ContactPage() {
                       </div>
                     </AnimatedContent>
 
+                    {/* Company and Phone */}
                     <AnimatedContent
                       distance={100}
                       direction="horizontal"
@@ -443,6 +500,7 @@ export default function ContactPage() {
                       </div>
                     </AnimatedContent>
 
+                    {/* Service Selection */}
                     <AnimatedContent
                       distance={100}
                       direction="horizontal"
@@ -481,6 +539,7 @@ export default function ContactPage() {
                       </div>
                     </AnimatedContent>
 
+                    {/* Budget and Timeline */}
                     <AnimatedContent
                       distance={100}
                       direction="horizontal"
@@ -545,6 +604,7 @@ export default function ContactPage() {
                       </div>
                     </AnimatedContent>
 
+                    {/* Message */}
                     <AnimatedContent
                       distance={100}
                       direction="horizontal"
@@ -572,6 +632,7 @@ export default function ContactPage() {
                       </div>
                     </AnimatedContent>
 
+                    {/* Submit Button */}
                     <AnimatedContent
                       distance={100}
                       direction="horizontal"
@@ -604,236 +665,106 @@ export default function ContactPage() {
                 </div>
               </AnimatedContent>
 
-              {/* Contact Information & Map */}
-              <div className="space-y-8">
-                {/* Office Information */}
-                <AnimatedContent
-                  distance={100}
-                  direction="horizontal"
-                  reverse={true}
-                  duration={1.5}
-                  initialOpacity={0}
-                  animateOpacity={true}
-                  scale={1}
-                  threshold={0.2}
-                >
-                  <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl">
-                    <h3 className="text-3xl font-bold text-white mb-6">
-                      Visit Our{" "}
-                      <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                        Office
-                      </span>
+              {/* Contact Information Panel */}
+              <AnimatedContent
+                distance={100}
+                direction="horizontal"
+                reverse={true}
+                duration={1.5}
+                initialOpacity={0}
+                animateOpacity={true}
+                scale={1}
+                threshold={0.2}
+              >
+                <div className="space-y-8">
+                  {/* Office Information */}
+                  <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+                    <h3 className="text-3xl font-bold text-white mb-6 flex items-center">
+                      <MapPin className="w-6 h-6 mr-3 text-purple-400" />
+                      Our Office
                     </h3>
-                    <div className="space-y-6">
-                      {[
-                        {
-                          icon: MapPin,
-                          title: "Head Office",
-                          value: "Lagos\nNigeria, 100001",
-                          gradient: "from-purple-500 to-purple-600",
-                        },
-                        {
-                          icon: Clock,
-                          title: "Business Hours",
-                          value:
-                            "Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM\nSunday: Closed",
-                          gradient: "from-blue-500 to-blue-600",
-                        },
-                        {
-                          icon: Phone,
-                          title: "Contact Details",
-                          value:
-                            "Phone: +2347013805937\nEmail: holfortmedia@gmail.com\nEmergency: +2347013805937",
-                          gradient: "from-indigo-500 to-indigo-600",
-                        },
-                      ].map((info, index) => (
-                        <AnimatedContent
-                          key={index}
-                          distance={100}
-                          direction="horizontal"
-                          reverse={true}
-                          duration={1.5}
-                          initialOpacity={0}
-                          animateOpacity={true}
-                          scale={1}
-                          threshold={0.2}
-                        >
-                          <div className="flex items-start">
-                            <div
-                              className={`w-12 h-12 bg-gradient-to-r ${info.gradient} rounded-2xl flex items-center justify-center mr-4 flex-shrink-0`}
-                            >
-                              <info.icon className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                              <h4 className="text-white font-semibold mb-2">
-                                {info.title}
-                              </h4>
-                              <p className="text-gray-200 whitespace-pre-line">
-                                {info.value}
-                              </p>
-                            </div>
-                          </div>
-                        </AnimatedContent>
-                      ))}
+                    <div className="space-y-4 text-gray-200">
+                      <p className="flex items-start">
+                        <MapPin className="w-5 h-5 mr-3 mt-1 text-blue-400 flex-shrink-0" />
+                        <span>
+                          Lagos, Nigeria
+                          <br />
+                          Available for meetings by appointment
+                        </span>
+                      </p>
+                      <p className="flex items-center">
+                        <Phone className="w-5 h-5 mr-3 text-purple-400" />
+                        <span>+2347079405729</span>
+                      </p>
+                      <p className="flex items-center">
+                        <Mail className="w-5 h-5 mr-3 text-blue-400" />
+                        <span>holfortmedia@gmail.com</span>
+                      </p>
+                      <p className="flex items-center">
+                        <Clock className="w-5 h-5 mr-3 text-indigo-400" />
+                        <span>Mon - Fri: 9:00 AM - 6:00 PM WAT</span>
+                      </p>
                     </div>
                   </div>
-                </AnimatedContent>
 
-                {/* Interactive Map */}
-
-                {/* Social Links */}
-                <AnimatedContent
-                  distance={100}
-                  direction="horizontal"
-                  reverse={true}
-                  duration={1.5}
-                  initialOpacity={0}
-                  animateOpacity={true}
-                  scale={1}
-                  threshold={0.2}
-                >
-                  <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl">
-                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                      <Globe className="w-6 h-6 mr-2 text-blue-400" />
+                  {/* Social Media */}
+                  <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+                    <h3 className="text-3xl font-bold text-white mb-6 flex items-center">
+                      <Globe className="w-6 h-6 mr-3 text-blue-400" />
                       Follow Us
                     </h3>
                     <div className="grid grid-cols-2 gap-4">
                       {[
-                        {
-                          icon: Instagram,
-                          name: "Instagram",
-                          handle: "@holfortmedia",
-                          color: "pink",
-                        },
-                        {
-                          icon: Linkedin,
-                          name: "LinkedIn",
-                          handle: "Holfort Media",
-                          color: "blue",
-                        },
-                        {
-                          icon: Twitter,
-                          name: "Twitter",
-                          handle: "@holfortmedia",
-                          color: "sky",
-                        },
-                        {
-                          icon: Youtube,
-                          name: "YouTube",
-                          handle: "Holfort Media",
-                          color: "red",
-                        },
+                        { icon: Instagram, name: "Instagram", color: "pink" },
+                        { icon: Twitter, name: "Twitter", color: "blue" },
+                        { icon: Linkedin, name: "LinkedIn", color: "indigo" },
+                        { icon: Youtube, name: "YouTube", color: "red" },
                       ].map((social, index) => (
-                        <AnimatedContent
+                        <a
                           key={index}
-                          distance={100}
-                          direction="horizontal"
-                          reverse={true}
-                          duration={1.5}
-                          initialOpacity={0}
-                          animateOpacity={true}
-                          scale={1}
-                          threshold={0.2}
+                          href="#"
+                          className={`bg-white/5 hover:bg-${social.color}-600/20 border border-white/10 hover:border-${social.color}-400/30 rounded-2xl p-4 transition-all duration-300 flex items-center group`}
                         >
-                          <a
-                            href="#"
-                            className="flex items-center p-4 bg-white/10 rounded-2xl hover:bg-white/20 transition-all duration-300 group"
-                          >
-                            <social.icon
-                              className={`w-6 h-6 text-${social.color}-400 mr-3`}
-                            />
-                            <div>
-                              <h4
-                                className={`text-white font-semibold group-hover:text-${social.color}-400 transition-colors`}
-                              >
-                                {social.name}
-                              </h4>
-                              <p className="text-gray-400 text-sm">
-                                {social.handle}
-                              </p>
-                            </div>
-                          </a>
-                        </AnimatedContent>
+                          <social.icon
+                            className={`w-5 h-5 text-${social.color}-400 mr-3`}
+                          />
+                          <span className="text-white group-hover:text-white">
+                            {social.name}
+                          </span>
+                          <ExternalLink className="w-4 h-4 ml-auto text-gray-400 group-hover:text-white" />
+                        </a>
                       ))}
                     </div>
                   </div>
-                </AnimatedContent>
-              </div>
+
+                  {/* Why Choose Us */}
+                  <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+                    <h3 className="text-3xl font-bold text-white mb-6 flex items-center">
+                      <Star className="w-6 h-6 mr-3 text-yellow-400" />
+                      Why Choose Us?
+                    </h3>
+                    <div className="space-y-4">
+                      {[
+                        "24-hour response guarantee",
+                        "Customized strategy for every client",
+                        "Proven track record in digital media",
+                        "Transparent communication",
+                        "Results-driven approach",
+                      ].map((feature, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center text-gray-200"
+                        >
+                          <CheckCircle className="w-5 h-5 mr-3 text-green-400 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </AnimatedContent>
             </div>
           </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-20">
-          <AnimatedContent
-            distance={100}
-            direction="vertical"
-            reverse={false}
-            duration={1.5}
-            initialOpacity={0}
-            animateOpacity={true}
-            scale={1}
-            threshold={0.2}
-          >
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold text-white mb-6">
-                  Frequently Asked{" "}
-                  <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                    Questions
-                  </span>
-                </h2>
-              </div>
-              <div className="space-y-4">
-                {[
-                  {
-                    question: "How quickly can you start my project?",
-                    answer:
-                      "We typically begin new projects within 1-2 weeks after contract signing. For urgent projects, we offer rush services with 48-72 hour turnaround.",
-                  },
-                  {
-                    question: "Do you work with international clients?",
-                    answer:
-                      "Yes! We work with clients globally and have experience managing projects across different time zones and cultural contexts.",
-                  },
-                  {
-                    question: "What's included in your consultation?",
-                    answer:
-                      "Our free consultation includes a brand audit, strategy recommendations, timeline planning, and a customized proposal for your specific needs.",
-                  },
-                  {
-                    question: "How do you measure campaign success?",
-                    answer:
-                      "We use comprehensive analytics including engagement rates, conversion tracking, brand sentiment analysis, and ROI measurements tailored to your specific goals.",
-                  },
-                ].map((faq, index) => (
-                  <AnimatedContent
-                    key={index}
-                    distance={100}
-                    direction="horizontal"
-                    reverse={index % 2 === 0}
-                    duration={1.5}
-                    initialOpacity={0}
-                    animateOpacity={true}
-                    scale={1}
-                    threshold={0.2}
-                  >
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                      <div className="p-6">
-                        <h3 className="text-white font-semibold text-lg mb-3 flex items-center">
-                          <Star className="w-5 h-5 mr-3 text-purple-400" />
-                          {faq.question}
-                        </h3>
-                        <p className="text-gray-300 leading-relaxed pl-8">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </div>
-                  </AnimatedContent>
-                ))}
-              </div>
-            </div>
-          </AnimatedContent>
         </section>
       </div>
     </div>
