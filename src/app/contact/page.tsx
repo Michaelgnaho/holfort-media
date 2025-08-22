@@ -79,10 +79,33 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Validate required fields
+      if (
+        !formData.name ||
+        !formData.email ||
+        !formData.service ||
+        !formData.message
+      ) {
+        throw new Error("Please fill in all required fields");
+      }
+
+      // Send form data to API route
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      // Show success message
       setIsSubmitted(true);
+
       // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
@@ -98,7 +121,12 @@ export default function ContactPage() {
           projectType: "consultation",
         });
       }, 3000);
-    }, 2000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("There was an error sending your booking. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const services = [

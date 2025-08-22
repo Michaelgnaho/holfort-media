@@ -14,9 +14,11 @@ import {
   Twitter,
   Instagram,
   Linkedin,
-  Youtube,
+  Music2,
   ArrowRight,
 } from "lucide-react";
+import Image from "next/image";
+import logo from "@/holfort-logo.jpg";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -52,7 +54,7 @@ export default function Footer() {
     {
       name: "Instagram",
       icon: Instagram,
-      href: "https://instagram.com/holfortmedia",
+      href: "https://www.instagram.com/holfortmedia1/",
     },
     {
       name: "LinkedIn",
@@ -60,9 +62,9 @@ export default function Footer() {
       href: "https://linkedin.com/holfortmedia",
     },
     {
-      name: "YouTube",
-      icon: Youtube,
-      href: "https://youtube.com/holfortmedia",
+      name: "Tiktok",
+      icon: Music2,
+      href: "https://www.tiktok.com/@holfortmedia?is_from_webapp=1&sender_device=pca",
     },
   ];
 
@@ -81,10 +83,17 @@ export default function Footer() {
             <div className="lg:col-span-2">
               {/* Logo */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                  <div className="w-5 h-5 bg-gray-900 rounded-full"></div>
-                </div>
-                <h3 className="text-white text-2xl font-bold">Holfort Media</h3>
+                <Link
+                  href="/"
+                  className="text-white text-xl font-bold hover:text-gray-200 transition-colors duration-200"
+                  aria-label="Holfort Media - Go to homepage"
+                >
+                  <Image
+                    src={logo}
+                    className="w-8 h-8 rounded-md"
+                    alt={"LOGO"}
+                  />
+                </Link>
               </div>
 
               {/* Description */}
