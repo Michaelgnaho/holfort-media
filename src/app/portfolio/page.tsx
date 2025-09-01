@@ -15,6 +15,7 @@ import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent
 import wedding from "../../../videos/project-wedding.mp4";
 import PVC from "../../../videos/project_igbogbo1.mp4";
 import HOA from "../../../videos/project_HOA.mp4";
+import AafinCommissioning from "../../../videos/project-aafin-commissioning.mp4";
 import Link from "next/link";
 
 // Silk Background Component
@@ -42,6 +43,7 @@ const SilkBackground = () => (
 );
 
 // Portfolio data
+
 const portfolioItems = [
   {
     id: 1,
@@ -95,6 +97,24 @@ const portfolioItems = [
       speaking: "12 Events",
     },
     tags: ["Personal Branding", "PR", "Content Strategy"],
+    featured: true,
+  },
+  {
+    id: 4,
+    title: "Aafin Adeboruwa Commissioning",
+    category: "Event Coverage",
+    type: "event",
+    client: "Igbogbo Kingdom",
+    description:
+      "Comprehensive media coverage capturing the historic commissioning of Aafin Adeboruwa, a grand ceremony led by Hon. Kayode Roberts representing the Deputy Governor of Lagos State.",
+    video: AafinCommissioning,
+    results: {
+      views: "75K+",
+      engagement: "90%",
+      reach: "3M+",
+      duration: "1 Day",
+    },
+    tags: ["Event Coverage", "Photography", "Videography"],
     featured: true,
   },
 ];
