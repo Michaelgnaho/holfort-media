@@ -15,6 +15,7 @@ import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent
 import wedding from "../../../videos/project-wedding.mp4";
 import PVC from "../../../videos/project_igbogbo1.mp4";
 import HOA from "../../../videos/project_HOA.mp4";
+import Link from "next/link";
 
 // Silk Background Component
 const SilkBackground = () => (
@@ -455,7 +456,9 @@ export default function PortfolioPage() {
                             ))}
                           </div>
                           <button className="w-full bg-gradient-to-r from-purple-600/80 to-blue-600/80 text-white font-semibold py-3 px-6 rounded-2xl hover:from-purple-600 hover:to-blue-600 transition-all duration-300 flex items-center justify-center group">
-                            <span className="mr-2">View Details</span>
+                            <Link href={`/contact`}>
+                              <span className="mr-2">Book Us</span>
+                            </Link>{" "}
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                           </button>
                         </div>
@@ -489,12 +492,11 @@ export default function PortfolioPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group">
-                    <span className="mr-3">Start Your Project</span>
+                    <Link href="/contact">
+                      <span className="mr-3">Start Your Project</span>
+                    </Link>
+
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
-                  <button className="inline-flex items-center bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20 group">
-                    <Camera className="w-5 h-5 mr-3" />
-                    <span>View More Projects</span>
                   </button>
                 </div>
               </div>
