@@ -74,8 +74,8 @@ export default function ServicesSection() {
           scale={1}
           threshold={0.2}
         >
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+          <div className="text-center mb-12  sm:mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mt-10 mb-6 tracking-tight">
               Our{" "}
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                 Services
@@ -167,7 +167,7 @@ export default function ServicesSection() {
           scale={1}
           threshold={0.2}
         >
-          <div className="mb-16 sm:mb-20">
+          <div className="mb-16 mt-10 sm:mb-20">
             <h3 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8">
               Our Work in Action
             </h3>
@@ -270,7 +270,7 @@ export default function ServicesSection() {
           scale={1}
           threshold={0.2}
         >
-          <div className="text-center">
+          <div className="text-center  mb-8">
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
               Ready to Elevate Your Brand?
             </h3>
@@ -278,7 +278,7 @@ export default function ServicesSection() {
               Explore our complete service offerings and see how we can
               transform your digital presence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col mb-8 sm:flex-row gap-4 justify-center">
               <Link
                 href="/services"
                 className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group touch-manipulation"

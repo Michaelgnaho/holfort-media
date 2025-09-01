@@ -5,17 +5,16 @@ import {
   ArrowRight,
   ExternalLink,
   Camera,
-  Video as VideoIcon,
   Star,
   Filter,
   Grid3X3,
   List,
-  Award,
 } from "lucide-react";
-import Image from "next/image";
 import Video from "next-video";
-import HeroVid from "../../../videos/hero-vid.mp4";
 import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
+import wedding from "../../../videos/project-wedding.mp4";
+import PVC from "../../../videos/project_igbogbo1.mp4";
+import HOA from "../../../videos/project_HOA.mp4";
 
 // Silk Background Component
 const SilkBackground = () => (
@@ -45,14 +44,13 @@ const SilkBackground = () => (
 const portfolioItems = [
   {
     id: 1,
-    title: "Igbogbo PVC Campaingn",
+    title: "Igbogbo PVC Campaign",
     category: "Video Coverage",
     type: "event",
     client: "Igbogbo Local Government",
     description:
       "Complete media coverage and live streaming A Message from the Executive Chairman, Igbogbo Baiyeku LCDA on PVC Collection",
-    image:
-      "https://i.pinimg.com/736x/3c/0a/af/3c0aafbcd0d04d99fb33628ed0d9205e.jpg",
+    video: PVC,
     results: {
       views: "50K+",
       engagement: "85%",
@@ -70,8 +68,7 @@ const portfolioItems = [
     client: "Mr & Mrs. Johnson",
     description:
       "Comprehensive wedding coverage including photography, videography, and live streaming for a memorable celebration.",
-    image:
-      "https://i.pinimg.com/736x/d5/2d/7c/d52d7cdd20736a01b0978e04ac276d39.jpg",
+    video: wedding,
     results: {
       awareness: "+300%",
       leads: "15K+",
@@ -83,14 +80,13 @@ const portfolioItems = [
   },
   {
     id: 3,
-    title: "Mentorship Session With HOA ",
+    title: "Mentorship Session With HOA",
     category: "Publicity Campaign",
     type: "branding",
     client: "HOA",
     description:
       "Strategic personal branding and PR campaign for HOA, enhancing online presence and engagement.",
-    image:
-      "https://i.pinimg.com/736x/f8/bb/26/f8bb26f7387644df73e2660ab988ea81.jpg",
+    video: HOA,
     results: {
       followers: "+250%",
       mentions: "500+",
@@ -220,12 +216,15 @@ export default function PortfolioPage() {
                   >
                     <div className="group relative">
                       <div className="bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 hover:scale-[1.02]">
-                        <div className="aspect-[16/10] relative overflow-hidden">
-                          <Image
-                            src={project.image}
-                            alt={project.title}
-                            fill
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        <div className="relative w-full">
+                          <Video
+                            src={project.video}
+                            className="w-full h-auto rounded-t-2xl shadow-lg object-cover"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            webkit-playsinline="true"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                           <div className="absolute top-6 left-6 bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 rounded-full">
@@ -379,21 +378,22 @@ export default function PortfolioPage() {
                     <div className="group">
                       <div
                         className={`bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 hover:scale-[1.02] ${
-                          viewMode === "list" ? "flex" : ""
+                          viewMode === "list" ? "flex flex-col md:flex-row" : ""
                         }`}
                       >
                         <div
-                          className={`${
-                            viewMode === "list"
-                              ? "w-80 flex-shrink-0"
-                              : "aspect-video"
-                          } relative overflow-hidden`}
+                          className={`relative ${
+                            viewMode === "list" ? "md:w-1/2 w-full" : "w-full"
+                          }`}
                         >
-                          <Image
-                            src={project.image}
-                            alt={project.title}
-                            fill
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          <Video
+                            src={project.video}
+                            className="w-full h-auto rounded-t-2xl shadow-lg object-cover"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            webkit-playsinline="true"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                           <div className="absolute top-4 left-4">
@@ -407,7 +407,11 @@ export default function PortfolioPage() {
                             </div>
                           )}
                         </div>
-                        <div className="p-6 flex-1">
+                        <div
+                          className={`p-6 ${
+                            viewMode === "list" ? "md:w-1/2 w-full" : ""
+                          }`}
+                        >
                           <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300">
                             {project.title}
                           </h3>
@@ -461,136 +465,6 @@ export default function PortfolioPage() {
           </AnimatedContent>
         </section>
 
-        {/* Case Study Spotlight */}
-        {/* <section className="py-20">
-          <AnimatedContent
-            distance={100}
-            direction="vertical"
-            reverse={false}
-            initialOpacity={0}
-            animateOpacity={true}
-            threshold={0.1}
-          >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
-                <h2 className="text-5xl font-bold text-white mb-6">
-                  Case Study{" "}
-                  <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                    Spotlight
-                  </span>
-                </h2>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Deep dive into our most successful campaigns and their
-                  measurable impact
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-purple-600/10 to-blue-600/10 backdrop-blur-sm rounded-3xl p-8 border border-white/10 mb-12">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  <AnimatedContent
-                    distance={100}
-                    direction="horizontal"
-                    reverse={false}
-                    initialOpacity={0}
-                    animateOpacity={true}
-                    threshold={0.1}
-                  >
-                    <div>
-                      <div className="flex items-center mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
-                          <Award className="w-6 h-6 text-white" />
-                        </div>
-                        <span className="text-purple-400 font-semibold">
-                          Award-Winning Campaign
-                        </span>
-                      </div>
-                      <h3 className="text-4xl font-bold text-white mb-4">
-                        EcoGreen Digital Transformation
-                      </h3>
-                      <p className="text-gray-200 text-lg mb-6 leading-relaxed">
-                        How we transformed a traditional manufacturing company
-                        into a digital-first sustainable brand, achieving
-                        record-breaking engagement and sales growth within 6
-                        months.
-                      </p>
-                      <div className="grid grid-cols-2 gap-6 mb-8">
-                        {[
-                          {
-                            value: "+450%",
-                            label: "ROI Increase",
-                            color: "purple",
-                          },
-                          {
-                            value: "2.1M",
-                            label: "Total Reach",
-                            color: "blue",
-                          },
-                          {
-                            value: "15K+",
-                            label: "Quality Leads",
-                            color: "indigo",
-                          },
-                          {
-                            value: "6 Months",
-                            label: "Timeline",
-                            color: "pink",
-                          },
-                        ].map((metric, index) => (
-                          <AnimatedContent
-                            key={index}
-                            distance={100}
-                            direction="horizontal"
-                            reverse={index % 2 === 0}
-                            initialOpacity={0}
-                            animateOpacity={true}
-                            threshold={0.1}
-                          >
-                            <div className="text-center p-4 bg-white/5 rounded-2xl border border-white/10">
-                              <h4 className="text-3xl font-bold text-white mb-2">
-                                {metric.value}
-                              </h4>
-                              <p className={`text-${metric.color}-400`}>
-                                {metric.label}
-                              </p>
-                            </div>
-                          </AnimatedContent>
-                        ))}
-                      </div>
-                      <button className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group">
-                        <span className="mr-3">Read Full Case Study</span>
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                      </button>
-                    </div>
-                  </AnimatedContent>
-                  <AnimatedContent
-                    distance={100}
-                    direction="horizontal"
-                    reverse={true}
-                    initialOpacity={0}
-                    animateOpacity={true}
-                    threshold={0.1}
-                  >
-                    <div className="relative w-full max-w-full mx-auto">
-                      <div className="aspect-[4/3] sm:aspect-[16/9] bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                        <Video
-                          src={HeroVid}
-                          className="w-full h-full object-cover rounded-3xl"
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                        />
-                        <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/20">
-                          <VideoIcon className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-                    </div>
-                  </AnimatedContent>
-                </div>
-              </div>
-            </div>
-          </AnimatedContent>
-        </section> */}
-
         {/* Call to Action */}
         <section className="py-20">
           <AnimatedContent
@@ -625,6 +499,18 @@ export default function PortfolioPage() {
           </AnimatedContent>
         </section>
       </div>
+
+      {/* Safe Area Handling for iOS */}
+      <style jsx>{`
+        @supports (padding: env(safe-area-inset)) {
+          .relative.min-h-screen {
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
+          }
+        }
+      `}</style>
     </div>
   );
 }

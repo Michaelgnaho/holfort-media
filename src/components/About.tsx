@@ -38,7 +38,7 @@ export default function AboutSection() {
           scale={1}
           threshold={0.2}
         >
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mb-12 mt-10 sm:mb-16">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
               About{" "}
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
@@ -147,7 +147,7 @@ export default function AboutSection() {
           scale={1}
           threshold={0.2}
         >
-          <div className="mb-16 sm:mb-20">
+          <div className="mb-16 mt-10 sm:mb-20">
             <h3 className="text-2xl sm:text-3xl font-bold text-white text-center mb-12">
               What We Do Best
             </h3>
@@ -343,7 +343,7 @@ export default function AboutSection() {
           scale={1}
           threshold={0.2}
         >
-          <div className="text-center">
+          <div className="text-center mb-8">
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
               Ready to Transform Your Brand?
             </h3>
