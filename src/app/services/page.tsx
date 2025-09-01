@@ -53,7 +53,7 @@ const services = [
     title: "Media Consulting & Strategy",
     icon: Target,
     description:
-      "Bespoke media strategies that align with business goals, target audiences, and industry trends to maximize brand visibility and impact.",
+      "Bespoke media strategies that align with business goals, target audiences, and industry trends to maximize brand visibility and impact for long.",
     features: [
       "Strategic media planning and analysis",
       "Audience research and targeting",
