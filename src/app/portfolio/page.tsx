@@ -226,20 +226,21 @@ export default function PortfolioPage() {
                             playsInline
                             webkit-playsinline="true"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                          <div className="absolute top-6 left-6 bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 rounded-full">
-                            <span className="text-white font-semibold text-sm">
-                              {project.category}
-                            </span>
-                          </div>
-                          <div className="absolute top-6 right-6 bg-gradient-to-r from-yellow-500 to-orange-500 px-3 py-1 rounded-full flex items-center">
-                            <Star className="w-4 h-4 text-white mr-1" />
-                            <span className="text-white font-semibold text-xs">
-                              Featured
-                            </span>
-                          </div>
                         </div>
                         <div className="p-8">
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 rounded-full text-white font-semibold text-sm">
+                              {project.category}
+                            </span>
+                            {project.featured && (
+                              <div className="bg-gradient-to-r from-yellow-500 to-orange-500 px-3 py-1 rounded-full flex items-center">
+                                <Star className="w-4 h-4 text-white mr-1" />
+                                <span className="text-white font-semibold text-xs">
+                                  Featured
+                                </span>
+                              </div>
+                            )}
+                          </div>
                           <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300">
                             {project.title}
                           </h3>
@@ -395,23 +396,25 @@ export default function PortfolioPage() {
                             playsInline
                             webkit-playsinline="true"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                          <div className="absolute top-4 left-4">
-                            <span className="bg-gradient-to-r from-purple-600 to-blue-600 px-3 py-1 rounded-full text-white text-xs font-semibold">
-                              {project.category}
-                            </span>
-                          </div>
-                          {project.featured && (
-                            <div className="absolute top-4 right-4 bg-gradient-to-r from-yellow-500 to-orange-500 p-2 rounded-full">
-                              <Star className="w-4 h-4 text-white" />
-                            </div>
-                          )}
                         </div>
                         <div
                           className={`p-6 ${
                             viewMode === "list" ? "md:w-1/2 w-full" : ""
                           }`}
                         >
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="bg-gradient-to-r from-purple-600 to-blue-600 px-3 py-1 rounded-full text-white text-xs font-semibold">
+                              {project.category}
+                            </span>
+                            {project.featured && (
+                              <div className="bg-gradient-to-r from-yellow-500 to-orange-500 px-3 py-1 rounded-full flex items-center">
+                                <Star className="w-4 h-4 text-white mr-1" />
+                                <span className="text-white font-semibold text-xs">
+                                  Featured
+                                </span>
+                              </div>
+                            )}
+                          </div>
                           <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300">
                             {project.title}
                           </h3>
