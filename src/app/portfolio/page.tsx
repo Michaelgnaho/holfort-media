@@ -395,6 +395,13 @@ export default function PortfolioPage() {
                     threshold={0.1}
                   >
                     <div className="group relative">
+                      <Video
+                        src={project.video}
+                        className="w-full h-auto object-cover"
+                        muted
+                        playsInline
+                        webkit-playsinline="true"
+                      />
                       <div className="bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden border-2 border-purple-200/50 shadow-xl ">
                         <div
                           className={`${
@@ -403,14 +410,6 @@ export default function PortfolioPage() {
                               : ""
                           }`}
                         >
-                          <Video
-                            src={project.video}
-                            className="w-full h-auto object-cover"
-                            muted
-                            playsInline
-                            webkit-playsinline="true"
-                          />
-
                           <div
                             className={`p-6 ${
                               viewMode === "list" ? "md:w-1/2 w-full" : ""
