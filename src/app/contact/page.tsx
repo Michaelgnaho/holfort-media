@@ -181,11 +181,9 @@ export default function ContactPage() {
               <div className="text-center mb-16">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[0.9] mb-6">
                   Let&apos;s{" "}
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[0.9] mb-6">
-                    <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 bg-clip-text text-transparent">
-                      Connect
-                    </span>
-                  </h2>
+                  <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 bg-clip-text text-transparent">
+                    Connect
+                  </span>
                 </h1>
                 {/* Subtle underline accent */}
                 <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto rounded-full mt-4 mb-6"></div>

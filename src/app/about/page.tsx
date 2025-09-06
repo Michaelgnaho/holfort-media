@@ -88,11 +88,9 @@ export default function AboutPage() {
               <div className="text-center mb-12 sm:mb-16">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight leading-[0.9] mb-6">
                   About{" "}
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[0.9] mb-6">
-                    <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 bg-clip-text text-transparent">
-                      Holfort Media
-                    </span>
-                  </h2>
+                  <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 bg-clip-text text-transparent">
+                    Holfort Media
+                  </span>
                 </h1>
                 {/* Subtle underline accent - Same as About Section */}
                 <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto rounded-full mt-4 mb-6"></div>
