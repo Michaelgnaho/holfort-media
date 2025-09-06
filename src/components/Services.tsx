@@ -11,7 +11,7 @@ import {
   Shield,
   Globe,
 } from "lucide-react";
-import Silk from "@/blocks/Backgrounds/Silk/Silk";
+
 import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
 import Image from "next/image";
 import service1 from "../../videos/project-wedding.mp4";
@@ -50,16 +50,6 @@ export default function ServicesSection() {
   return (
     <section className="relative min-h-screen py-16 sm:py-20 overflow-hidden">
       {/* Silk Background - Optimized for mobile */}
-      <div className="absolute inset-0 z-0">
-        <Silk
-          speed={1.2} // Reduced speed for mobile performance
-          scale={0.4}
-          color="#582EFF"
-          noiseIntensity={0.3} // Reduced noise for smoother rendering
-          rotation={1.5}
-        />
-        <div className="w-full h-full bg-gradient-to-br from-purple-900/20 to-indigo-900/30" />
-      </div>
 
       {/* Content Overlay */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -189,7 +179,7 @@ export default function ServicesSection() {
                         <Video
                           src={service1}
                           className="w-full h-auto rounded-2xl shadow-lg"
-                          autoPlay
+                          // autoPlay
                           loop
                           muted
                           playsInline
@@ -217,7 +207,7 @@ export default function ServicesSection() {
                         <Video
                           src={service2}
                           className="w-full h-auto rounded-2xl shadow-lg"
-                          autoPlay
+                          // autoPlay
                           loop
                           muted
                           playsInline
@@ -246,7 +236,7 @@ export default function ServicesSection() {
                           src={service3}
                           className="w-full h-auto rounded-2xl shadow-lg"
                           autoPlay
-                          loop
+                          // loop
                           muted
                           playsInline
                         />

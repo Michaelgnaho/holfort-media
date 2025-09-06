@@ -23,30 +23,6 @@ import Image from "next/image";
 import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
 import Link from "next/link";
 
-// Silk Background Component (simplified version)
-const SilkBackground = () => (
-  <div className="absolute inset-0 overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-blue-900/30 to-indigo-900/50">
-      <div className="absolute inset-0 opacity-20">
-        {[...Array(30)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-white/10 animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              width: `${Math.random() * 4 + 1}px`,
-              height: `${Math.random() * 4 + 1}px`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${Math.random() * 3 + 2}s`,
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
 const services = [
   {
     id: 1,
@@ -199,9 +175,6 @@ export default function ServicesPage() {
 
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
-      {/* Silk Background */}
-      <SilkBackground />
-
       {/* Content */}
       <div className="relative z-10">
         {/* Hero Section */}
