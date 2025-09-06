@@ -31,7 +31,7 @@ const teamMembers = [
   },
   {
     name: "Oluwaseun Ajayi",
-    position: "Chief Operating Officer",
+    position: "Chief Operating Officer",
     bio: "Seun creative vision drives our award-winning campaigns, blending art and strategy to create impactful narratives.",
     gradient: "from-blue-500/20 to-blue-600/20",
     iconColor: "text-blue-400",
@@ -55,38 +55,21 @@ const teamMembers = [
   },
 ];
 
-// Silk Background Component (optimized for mobile)
-const SilkBackground = () => (
-  <div className="absolute inset-0 overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-blue-900/30 to-indigo-900/50">
-      <div className="absolute inset-0 opacity-20">
-        {[...Array(10)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-white/10 animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              width: `${Math.random() * 4 + 1}px`,
-              height: `${Math.random() * 4 + 1}px`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${Math.random() * 3 + 2}s`,
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
 export default function AboutPage() {
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
-      {/* Silk Background */}
-      <SilkBackground />
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50/30 overflow-hidden">
+      {/* Advanced Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_50%_50%,_purple_1px,_transparent_1px)] bg-[length:40px_40px]"></div>
+
+      {/* Floating Elements for Visual Interest */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-purple-200/20 to-blue-200/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-l from-purple-300/15 to-blue-300/15 rounded-full blur-3xl opacity-25 animate-pulse delay-1000"></div>
+
+      {/* Refined overlay for perfect contrast */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/10 via-transparent to-white/20"></div>
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-20">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center py-16 sm:py-20">
           <AnimatedContent
@@ -101,16 +84,35 @@ export default function AboutPage() {
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12 sm:mb-16">
-                <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-6 sm:mb-8 tracking-tight">
-                  About{" "}
-                  <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                    Holfort Media
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight leading-[0.9] mb-6">
+                  <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 bg-clip-text text-transparent">
+                    About Holfort Media
                   </span>
                 </h1>
-                <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-600 mx-auto rounded-full mt-4"></div>
+                <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
                   Transforming brands through innovative digital solutions and
                   impactful storytelling across the globe.
                 </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <a
+                  href="/services"
+                  className="group relative inline-flex items-center bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 text-white font-bold px-10 py-5 rounded-2xl hover:from-purple-700 hover:via-purple-800 hover:to-blue-700 transition-all duration-500 shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transform-gpu touch-manipulation overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative mr-3 text-lg">
+                    Explore Our Services
+                  </span>
+                  <ArrowRight className="relative w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                </a>
+                <a
+                  href="/portfolio"
+                  className="group relative inline-flex items-center bg-white/80 backdrop-blur-xl text-gray-900 font-bold px-10 py-5 rounded-2xl border-2 border-purple-200 hover:border-blue-400 hover:bg-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 touch-manipulation"
+                >
+                  <span className="text-lg">View Our Work</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-50/50 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                </a>
               </div>
             </div>
           </AnimatedContent>
