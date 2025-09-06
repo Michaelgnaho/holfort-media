@@ -403,19 +403,14 @@ export default function PortfolioPage() {
                               : ""
                           }`}
                         >
-                          <div
-                            className={`relative ${
-                              viewMode === "list" ? "md:w-1/2 w-full" : "w-full"
-                            }`}
-                          >
-                            <Video
-                              src={project.video}
-                              className="w-full h-auto object-cover"
-                              muted
-                              playsInline
-                              webkit-playsinline="true"
-                            />
-                          </div>
+                          <Video
+                            src={project.video}
+                            className="w-full h-auto object-cover"
+                            muted
+                            playsInline
+                            webkit-playsinline="true"
+                          />
+
                           <div
                             className={`p-6 ${
                               viewMode === "list" ? "md:w-1/2 w-full" : ""
