@@ -161,8 +161,11 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <ul className="flex items-center space-x-8" role="menubar">
+          <div className="hidden text-gray-700  hover:bg-purple-800/50  md:block">
+            <ul
+              className="flex text-gray-700  hover:bg-purple-800/50 items-center space-x-8"
+              role="menubar"
+            >
               {navigationItems.map((item) => {
                 const Icon = item.icon;
                 return (
