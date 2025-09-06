@@ -25,8 +25,8 @@ export default function Hero() {
         {/* Left Column - Text Content */}
         <div className="flex-1 text-center lg:text-left mb-12 lg:mb-0 lg:pr-8">
           {/* Main Heading with Gradient */}
-          <div className="mb-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight leading-[0.9] mb-2">
+          <div className="mb-8 text-purple-900 ">
+            <h1 className="text-4xl text-purple-900 sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight leading-[0.9] mb-2">
               <span className="text-purple-900 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text drop-shadow-sm">
                 <TextType
                   text={["WELCOME TO", "HOLFORT MEDIA!"]}

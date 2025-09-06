@@ -116,15 +116,15 @@ export default function PortfolioPage() {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50/30 overflow-hidden">
-      {/* Advanced Background Pattern - Same as About Section */}
+      {/* Advanced Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_50%_50%,_purple_1px,_transparent_1px)] bg-[length:40px_40px]"></div>
 
-      {/* Floating Elements for Visual Interest - Same as About Section */}
+      {/* Floating Elements for Visual Interest */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-purple-200/20 to-blue-200/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-l from-purple-300/15 to-pink-300/15 rounded-full blur-3xl opacity-25 animate-pulse delay-1000"></div>
       <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-r from-blue-200/15 to-purple-200/15 rounded-full blur-3xl opacity-20 animate-pulse delay-500"></div>
 
-      {/* Refined overlay for perfect contrast - Same as About Section */}
+      {/* Refined overlay for perfect contrast */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/10 via-transparent to-white/20"></div>
 
       {/* Content */}
@@ -148,7 +148,6 @@ export default function PortfolioPage() {
                     Portfolio
                   </span>
                 </h1>
-                {/* Subtle underline accent */}
                 <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto rounded-full mt-4 mb-6"></div>
                 <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium mb-8">
                   Discover our most impactful projects, successful campaigns,
@@ -211,7 +210,6 @@ export default function PortfolioPage() {
                     Projects
                   </span>
                 </h2>
-                {/* Subtle underline accent */}
                 <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto rounded-full mb-6"></div>
                 <p className="text-lg text-gray-700 max-w-3xl mx-auto font-medium">
                   Our most impactful and award-winning projects that demonstrate
@@ -231,25 +229,20 @@ export default function PortfolioPage() {
                     threshold={0.1}
                   >
                     <div className="group relative">
-                      {/* Glow Effect - Same as About Section */}
-                      <div className="absolute -inset-4 bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 rounded-3xl opacity-20 group-hover:opacity-30 blur-xl transition-opacity duration-500"></div>
-
-                      {/* Card with Premium Styling - Same as About Section */}
                       <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden border-2 border-purple-200/50 shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:scale-[1.02]">
                         <div className="relative w-full">
                           <Video
                             src={project.video}
-                            className="w-full h-auto rounded-t-2xl object-cover"
-                            // autoPlay
-                            // loop
+                            className="w-full h-auto object-contain"
                             muted
                             playsInline
                             webkit-playsinline="true"
+                            controls
                           />
                         </div>
                         <div className="p-8">
                           <div className="flex items-center justify-between mb-3">
-                            <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 px-4 py-2 rounded-full text-white font-semibold text-sm">
+                            <span className="bg-gradient-to-r from-purple-600 to-purple-700 px-4 py-2 rounded-full text-white font-semibold text-sm">
                               {project.category}
                             </span>
                             {project.featured && (
@@ -308,10 +301,6 @@ export default function PortfolioPage() {
                           </div>
                         </div>
                       </div>
-
-                      {/* Decorative Elements - Same as About Section */}
-                      <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl opacity-80 rotate-12 group-hover:rotate-45 transition-transform duration-500"></div>
-                      <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl opacity-60 rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
                     </div>
                   </AnimatedContent>
                 ))}
@@ -340,7 +329,6 @@ export default function PortfolioPage() {
                       Projects
                     </span>
                   </h2>
-                  {/* Subtle underline accent */}
                   <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full mb-4"></div>
                   <p className="text-gray-700 font-medium">
                     Browse through our comprehensive portfolio
@@ -423,12 +411,11 @@ export default function PortfolioPage() {
                           >
                             <Video
                               src={project.video}
-                              className="w-full h-auto object-cover"
-                              // autoPlay
-                              // loop
+                              className="w-full h-auto object-contain"
                               muted
                               playsInline
                               webkit-playsinline="true"
+                              controls
                             />
                           </div>
                           <div
@@ -495,7 +482,7 @@ export default function PortfolioPage() {
                               <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                               <Link href={`/contact`}>
                                 <span className="relative mr-2">Book Us</span>
-                              </Link>{" "}
+                              </Link>
                               <ArrowRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                             </button>
                           </div>
@@ -525,7 +512,6 @@ export default function PortfolioPage() {
                 <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   Ready to Create Your Success Story?
                 </h3>
-                {/* Subtle underline accent */}
                 <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto rounded-full mb-6"></div>
                 <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto font-medium">
                   Let&apos;s discuss how we can help you achieve similar results
@@ -549,7 +535,7 @@ export default function PortfolioPage() {
         </section>
       </div>
 
-      {/* Additional decorative elements - Same as About Section */}
+      {/* Additional decorative elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-5">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-400/30 rounded-full animate-pulse"></div>
         <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-purple-500/40 rounded-full animate-pulse delay-1000"></div>

@@ -142,7 +142,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 w-screen text-black bg-gradient-to-br from-slate-50 via-white to-purple-50/30 border-t border-purple-200/30 overflow-hidden shadow-lg"
+      className="sticky top-0 z-50 w-screen bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 backdrop-blur-md border-b border-purple-700/30 shadow-lg"
       role="navigation"
       aria-label="Main navigation"
     >
@@ -153,7 +153,7 @@ export default function Navbar() {
             {/* Text Logo */}
             <Link
               href="/"
-              className="text-gray-700 text-xl font-bold hover:text-purple-200 transition-colors duration-200"
+              className="text-white text-xl font-bold hover:text-purple-200 transition-colors duration-200"
               aria-label="Holfort Media - Go to homepage"
             >
               <Image src={logo} className="w-8 h-8 rounded-md" alt={"LOGO"} />
@@ -161,11 +161,8 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden text-gray-700   md:block">
-            <ul
-              className="flex text-gray-700  items-center space-x-8"
-              role="menubar"
-            >
+          <div className="hidden md:block">
+            <ul className="flex items-center space-x-8" role="menubar">
               {navigationItems.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -203,7 +200,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               type="button"
-              className="text-gray-700  hover:text-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:ring-offset-2 focus:ring-offset-purple-800 p-2 rounded-md transition-colors duration-200"
+              className="text-white hover:text-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:ring-offset-2 focus:ring-offset-purple-800 p-2 rounded-md transition-colors duration-200"
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen}
               aria-label={
@@ -227,7 +224,7 @@ export default function Navbar() {
         <div
           ref={mobileMenuRef}
           id="mobile-menu"
-          className="md:hidden bg-gradient-to-br from-slate-50 via-white to-purple-50/30 backdrop-blur-md border-t border-purple-700/30"
+          className="md:hidden bg-gradient-to-b from-purple-900 via-purple-800 to-purple-900 backdrop-blur-md border-t border-purple-700/30"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="mobile-menu-button"
