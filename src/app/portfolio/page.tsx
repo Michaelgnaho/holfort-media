@@ -395,7 +395,7 @@ export default function PortfolioPage() {
                     threshold={0.1}
                   >
                     <div className="group relative">
-                      <div className="bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden border-2 border-purple-200/50 shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:scale-[1.02]">
+                      <div className="bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden border-2 border-purple-200/50 shadow-xl ">
                         <div
                           className={`${
                             viewMode === "list"
@@ -410,7 +410,7 @@ export default function PortfolioPage() {
                           >
                             <Video
                               src={project.video}
-                              className="w-full h-auto rounded-t-2xl shadow-lg object-cover"
+                              className="w-full h-auto object-cover"
                               muted
                               playsInline
                               webkit-playsinline="true"
