@@ -233,7 +233,7 @@ export default function PortfolioPage() {
                         <div className="relative w-full">
                           <Video
                             src={project.video}
-                            className="w-full h-auto object-contain"
+                            className="w-full h-auto rounded-t-2xl shadow-lg object-cover"
                             muted
                             playsInline
                             webkit-playsinline="true"
@@ -410,7 +410,7 @@ export default function PortfolioPage() {
                           >
                             <Video
                               src={project.video}
-                              className="w-full h-auto object-contain"
+                              className="w-full h-auto rounded-t-2xl shadow-lg object-cover"
                               muted
                               playsInline
                               webkit-playsinline="true"
