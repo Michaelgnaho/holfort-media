@@ -253,11 +253,10 @@ export default function ContactPage() {
                 distance={100}
                 direction="horizontal"
                 reverse={false}
-                duration={1.5}
                 initialOpacity={0}
                 animateOpacity={true}
                 scale={1}
-                threshold={0.2}
+                threshold={0.1}
               >
                 <div className="relative group">
                   {/* Glow Effect - Same as About Section */}
