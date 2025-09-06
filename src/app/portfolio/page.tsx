@@ -229,7 +229,7 @@ export default function PortfolioPage() {
                     threshold={0.1}
                   >
                     <div className="group relative">
-                      <div className="rounded-2xl overflow-hidden shadow-xl">
+                      <div className="rounded-sm overflow-hidden shadow-xl">
                         <Video
                           src={project.video}
                           className="w-full h-auto rounded-t-2xl shadow-lg object-cover"
@@ -396,13 +396,15 @@ export default function PortfolioPage() {
                     threshold={0.1}
                   >
                     <div className="group relative">
-                      <Video
-                        src={project.video}
-                        className="w-full rounded-b-sm h-auto object-cover"
-                        muted
-                        playsInline
-                        webkit-playsinline="true"
-                      />
+                      <div className="rounded-sm overflow-hidden shadow-xl">
+                        <Video
+                          src={project.video}
+                          className="w-full rounded-b-sm h-auto object-cover"
+                          muted
+                          playsInline
+                          webkit-playsinline="true"
+                        />
+                      </div>
                       <div className="bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden border-2 border-purple-200/50 shadow-xl ">
                         <div
                           className={`${

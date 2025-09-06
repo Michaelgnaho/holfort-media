@@ -33,7 +33,8 @@ export default function Hero() {
                   typingSpeed={75}
                   pauseDuration={1500}
                   showCursor={true}
-                  className="text-purple-900 from-purple-600 via-purple-700 to-purple-900"
+                  className="text-purple-900"
+                  textColors={["text-purple-900"]}
                 />
               </span>
             </h1>
