@@ -18,10 +18,7 @@ import HOA from "../../../videos/project_HOA.mp4";
 import AafinCommissioning from "../../../videos/project-aafin-commissioning.mp4";
 import Link from "next/link";
 
-// Silk Background Component
-
 // Portfolio data
-
 const portfolioItems = [
   {
     id: 1,
@@ -118,26 +115,42 @@ export default function PortfolioPage() {
   const featuredProjects = portfolioItems.filter((item) => item.featured);
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50/30 overflow-hidden">
+      {/* Advanced Background Pattern - Same as About Section */}
+      <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_50%_50%,_purple_1px,_transparent_1px)] bg-[length:40px_40px]"></div>
+
+      {/* Floating Elements for Visual Interest - Same as About Section */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-purple-200/20 to-blue-200/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-l from-purple-300/15 to-pink-300/15 rounded-full blur-3xl opacity-25 animate-pulse delay-1000"></div>
+      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-r from-blue-200/15 to-purple-200/15 rounded-full blur-3xl opacity-20 animate-pulse delay-500"></div>
+
+      {/* Refined overlay for perfect contrast - Same as About Section */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/10 via-transparent to-white/20"></div>
+
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-20">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center py-20">
           <AnimatedContent
             distance={100}
             direction="vertical"
             reverse={false}
+            duration={1.5}
+            initialOpacity={0}
             animateOpacity={true}
+            threshold={0.2}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h1 className="text-6xl md:text-8xl font-bold mb-8 tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[0.9] mb-6">
                   Our{" "}
-                  <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                  <span className="text-purple-900 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text drop-shadow-sm">
                     Portfolio
                   </span>
                 </h1>
-                <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+                {/* Subtle underline accent */}
+                <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto rounded-full mt-4 mb-6"></div>
+                <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium mb-8">
                   Discover our most impactful projects, successful campaigns,
                   and transformative brand stories that showcase our expertise
                   in action.
@@ -158,14 +171,16 @@ export default function PortfolioPage() {
                       distance={100}
                       direction="horizontal"
                       reverse={index % 2 === 0}
+                      duration={1.5}
+                      initialOpacity={0}
                       animateOpacity={true}
                       threshold={0.1}
                     >
-                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                        <h3 className="text-3xl font-bold text-white mb-2">
+                      <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-6 border-2 border-purple-200/50 shadow-xl hover:shadow-purple-500/10 transition-all duration-300 hover:scale-105">
+                        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                           {stat.value}
                         </h3>
-                        <p className={`text-${stat.color}-400 font-semibold`}>
+                        <p className="text-gray-700 font-medium">
                           {stat.label}
                         </p>
                       </div>
@@ -183,18 +198,22 @@ export default function PortfolioPage() {
             distance={100}
             direction="vertical"
             reverse={false}
+            duration={1.5}
+            initialOpacity={0}
             animateOpacity={true}
             threshold={0.1}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h2 className="text-5xl font-bold text-white mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   Featured{" "}
-                  <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                  <span className="text-purple-900 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text">
                     Projects
                   </span>
                 </h2>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                {/* Subtle underline accent */}
+                <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto rounded-full mb-6"></div>
+                <p className="text-lg text-gray-700 max-w-3xl mx-auto font-medium">
                   Our most impactful and award-winning projects that demonstrate
                   our expertise across industries
                 </p>
@@ -206,16 +225,21 @@ export default function PortfolioPage() {
                     distance={100}
                     direction="horizontal"
                     reverse={index % 2 === 0}
+                    duration={1.5}
                     initialOpacity={0}
                     animateOpacity={true}
                     threshold={0.1}
                   >
                     <div className="group relative">
-                      <div className="bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 hover:scale-[1.02]">
+                      {/* Glow Effect - Same as About Section */}
+                      <div className="absolute -inset-4 bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 rounded-3xl opacity-20 group-hover:opacity-30 blur-xl transition-opacity duration-500"></div>
+
+                      {/* Card with Premium Styling - Same as About Section */}
+                      <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden border-2 border-purple-200/50 shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:scale-[1.02]">
                         <div className="relative w-full">
                           <Video
                             src={project.video}
-                            className="w-full h-auto rounded-t-2xl shadow-lg object-cover"
+                            className="w-full h-auto rounded-t-2xl object-cover"
                             // autoPlay
                             // loop
                             muted
@@ -225,7 +249,7 @@ export default function PortfolioPage() {
                         </div>
                         <div className="p-8">
                           <div className="flex items-center justify-between mb-3">
-                            <span className="bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 rounded-full text-white font-semibold text-sm">
+                            <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 px-4 py-2 rounded-full text-white font-semibold text-sm">
                               {project.category}
                             </span>
                             {project.featured && (
@@ -237,23 +261,23 @@ export default function PortfolioPage() {
                               </div>
                             )}
                           </div>
-                          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300">
+                          <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-800 transition-colors duration-300">
                             {project.title}
                           </h3>
-                          <p className="text-gray-400 text-sm mb-2">
+                          <p className="text-gray-600 text-sm mb-2 font-medium">
                             {project.client}
                           </p>
-                          <p className="text-gray-200 mb-6 leading-relaxed">
+                          <p className="text-gray-700 mb-6 leading-relaxed font-medium">
                             {project.description}
                           </p>
                           <div className="grid grid-cols-2 gap-4 mb-6">
                             {Object.entries(project.results).map(
                               ([key, value], resultIndex) => (
                                 <div key={resultIndex} className="text-center">
-                                  <h4 className="text-white font-bold text-lg">
+                                  <h4 className="text-gray-900 font-bold text-lg">
                                     {value}
                                   </h4>
-                                  <p className="text-gray-400 text-sm capitalize">
+                                  <p className="text-gray-600 text-sm capitalize font-medium">
                                     {key.replace(/([A-Z])/g, " $1")}
                                   </p>
                                 </div>
@@ -264,23 +288,30 @@ export default function PortfolioPage() {
                             {project.tags.map((tag, tagIndex) => (
                               <span
                                 key={tagIndex}
-                                className="px-3 py-1 bg-white/10 rounded-full text-sm text-gray-300 border border-white/20"
+                                className="px-3 py-1 bg-purple-100/60 border border-purple-200 rounded-full text-sm text-purple-800 font-medium"
                               >
                                 {tag}
                               </span>
                             ))}
                           </div>
                           <div className="flex gap-3">
-                            <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-3 px-6 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 flex items-center justify-center group">
-                              <span className="mr-2">View Case Study</span>
-                              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                            <button className="flex-1 group bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white font-bold py-3 px-6 rounded-2xl hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 transition-all duration-500 shadow-xl hover:shadow-purple-500/25 hover:scale-105 flex items-center justify-center">
+                              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                              <span className="relative mr-2">
+                                View Case Study
+                              </span>
+                              <ArrowRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                             </button>
-                            <button className="bg-white/10 backdrop-blur-sm text-white p-3 rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20">
+                            <button className="bg-white/80 backdrop-blur-sm text-gray-700 p-3 rounded-2xl hover:bg-purple-100/60 border border-purple-200 hover:border-purple-300 transition-all duration-300">
                               <ExternalLink className="w-5 h-5" />
                             </button>
                           </div>
                         </div>
                       </div>
+
+                      {/* Decorative Elements - Same as About Section */}
+                      <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl opacity-80 rotate-12 group-hover:rotate-45 transition-transform duration-500"></div>
+                      <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl opacity-60 rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
                     </div>
                   </AnimatedContent>
                 ))}
@@ -295,6 +326,7 @@ export default function PortfolioPage() {
             distance={100}
             direction="vertical"
             reverse={false}
+            duration={1.5}
             initialOpacity={0}
             animateOpacity={true}
             threshold={0.1}
@@ -302,52 +334,54 @@ export default function PortfolioPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col lg:flex-row justify-between items-center mb-12">
                 <div>
-                  <h2 className="text-4xl font-bold text-white mb-4">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                     All{" "}
-                    <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                    <span className="text-purple-900 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text">
                       Projects
                     </span>
                   </h2>
-                  <p className="text-gray-300">
+                  {/* Subtle underline accent */}
+                  <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full mb-4"></div>
+                  <p className="text-gray-700 font-medium">
                     Browse through our comprehensive portfolio
                   </p>
                 </div>
                 <div className="flex items-center gap-4 mt-6 lg:mt-0">
-                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-2xl p-2 border border-white/20">
-                    <Filter className="w-5 h-5 text-gray-400" />
+                  <div className="flex items-center gap-2 bg-white/80 backdrop-blur-xl rounded-2xl p-2 border-2 border-purple-200/50 shadow-lg">
+                    <Filter className="w-5 h-5 text-gray-600" />
                     <select
                       value={selectedCategory}
                       onChange={(e) => setSelectedCategory(e.target.value)}
-                      className="bg-transparent text-white border-none outline-none cursor-pointer"
+                      className="bg-transparent text-gray-700 border-none outline-none cursor-pointer font-medium"
                     >
                       {categories.map((category) => (
                         <option
                           key={category}
                           value={category}
-                          className="bg-gray-800"
+                          className="bg-white text-gray-700"
                         >
                           {category}
                         </option>
                       ))}
                     </select>
                   </div>
-                  <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-2xl p-1 border border-white/20">
+                  <div className="flex items-center bg-white/80 backdrop-blur-xl rounded-2xl p-1 border-2 border-purple-200/50 shadow-lg">
                     <button
                       onClick={() => setViewMode("grid")}
-                      className={`p-2 rounded-xl transition-all duration-200 ${
+                      className={`p-2 rounded-xl transition-all duration-300 ${
                         viewMode === "grid"
-                          ? "bg-purple-600 text-white"
-                          : "text-gray-400 hover:text-white"
+                          ? "bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-md"
+                          : "text-gray-600 hover:text-purple-700"
                       }`}
                     >
                       <Grid3X3 className="w-5 h-5" />
                     </button>
                     <button
                       onClick={() => setViewMode("list")}
-                      className={`p-2 rounded-xl transition-all duration-200 ${
+                      className={`p-2 rounded-xl transition-all duration-300 ${
                         viewMode === "list"
-                          ? "bg-purple-600 text-white"
-                          : "text-gray-400 hover:text-white"
+                          ? "bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-md"
+                          : "text-gray-600 hover:text-purple-700"
                       }`}
                     >
                       <List className="w-5 h-5" />
@@ -368,94 +402,103 @@ export default function PortfolioPage() {
                     distance={100}
                     direction="horizontal"
                     reverse={index % 2 === 0}
+                    duration={1.5}
                     initialOpacity={0}
                     animateOpacity={true}
                     threshold={0.1}
                   >
-                    <div className="group">
-                      <div
-                        className={`bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 hover:scale-[1.02] ${
-                          viewMode === "list" ? "flex flex-col md:flex-row" : ""
-                        }`}
-                      >
+                    <div className="group relative">
+                      <div className="bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden border-2 border-purple-200/50 shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:scale-[1.02]">
                         <div
-                          className={`relative ${
-                            viewMode === "list" ? "md:w-1/2 w-full" : "w-full"
+                          className={`${
+                            viewMode === "list"
+                              ? "flex flex-col md:flex-row"
+                              : ""
                           }`}
                         >
-                          <Video
-                            src={project.video}
-                            className="w-full h-auto rounded-t-2xl shadow-lg object-cover"
-                            // autoPlay
-                            // loop
-                            muted
-                            playsInline
-                            webkit-playsinline="true"
-                          />
-                        </div>
-                        <div
-                          className={`p-6 ${
-                            viewMode === "list" ? "md:w-1/2 w-full" : ""
-                          }`}
-                        >
-                          <div className="flex items-center justify-between mb-3">
-                            <span className="bg-gradient-to-r from-purple-600 to-blue-600 px-3 py-1 rounded-full text-white text-xs font-semibold">
-                              {project.category}
-                            </span>
-                            {project.featured && (
-                              <div className="bg-gradient-to-r from-yellow-500 to-orange-500 px-3 py-1 rounded-full flex items-center">
-                                <Star className="w-4 h-4 text-white mr-1" />
-                                <span className="text-white font-semibold text-xs">
-                                  Featured
-                                </span>
-                              </div>
-                            )}
-                          </div>
-                          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300">
-                            {project.title}
-                          </h3>
-                          <p className="text-gray-400 text-sm mb-3">
-                            {project.client}
-                          </p>
-                          <p className="text-gray-200 mb-4 leading-relaxed">
-                            {project.description}
-                          </p>
                           <div
-                            className={`grid ${
-                              viewMode === "list"
-                                ? "grid-cols-4"
-                                : "grid-cols-2"
-                            } gap-3 mb-4`}
+                            className={`relative ${
+                              viewMode === "list" ? "md:w-1/2 w-full" : "w-full"
+                            }`}
                           >
-                            {Object.entries(project.results)
-                              .slice(0, viewMode === "list" ? 4 : 2)
-                              .map(([key, value], resultIndex) => (
-                                <div key={resultIndex} className="text-center">
-                                  <h4 className="text-white font-bold">
-                                    {value}
-                                  </h4>
-                                  <p className="text-gray-400 text-xs capitalize">
-                                    {key}
-                                  </p>
-                                </div>
-                              ))}
+                            <Video
+                              src={project.video}
+                              className="w-full h-auto object-cover"
+                              // autoPlay
+                              // loop
+                              muted
+                              playsInline
+                              webkit-playsinline="true"
+                            />
                           </div>
-                          <div className="flex flex-wrap gap-1 mb-4">
-                            {project.tags.slice(0, 3).map((tag, tagIndex) => (
-                              <span
-                                key={tagIndex}
-                                className="px-2 py-1 bg-white/10 rounded-full text-xs text-gray-300"
-                              >
-                                {tag}
+                          <div
+                            className={`p-6 ${
+                              viewMode === "list" ? "md:w-1/2 w-full" : ""
+                            }`}
+                          >
+                            <div className="flex items-center justify-between mb-3">
+                              <span className="bg-gradient-to-r from-purple-600 to-purple-700 px-3 py-1 rounded-full text-white text-xs font-semibold">
+                                {project.category}
                               </span>
-                            ))}
+                              {project.featured && (
+                                <div className="bg-gradient-to-r from-yellow-500 to-orange-500 px-3 py-1 rounded-full flex items-center">
+                                  <Star className="w-4 h-4 text-white mr-1" />
+                                  <span className="text-white font-semibold text-xs">
+                                    Featured
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-300">
+                              {project.title}
+                            </h3>
+                            <p className="text-gray-600 text-sm mb-3 font-medium">
+                              {project.client}
+                            </p>
+                            <p className="text-gray-700 mb-4 leading-relaxed font-medium">
+                              {project.description}
+                            </p>
+                            <div
+                              className={`grid ${
+                                viewMode === "list"
+                                  ? "grid-cols-4"
+                                  : "grid-cols-2"
+                              } gap-3 mb-4`}
+                            >
+                              {Object.entries(project.results)
+                                .slice(0, viewMode === "list" ? 4 : 2)
+                                .map(([key, value], resultIndex) => (
+                                  <div
+                                    key={resultIndex}
+                                    className="text-center"
+                                  >
+                                    <h4 className="text-gray-900 font-bold">
+                                      {value}
+                                    </h4>
+                                    <p className="text-gray-600 text-xs capitalize font-medium">
+                                      {key}
+                                    </p>
+                                  </div>
+                                ))}
+                            </div>
+                            <div className="flex flex-wrap gap-1 mb-4">
+                              {project.tags.slice(0, 3).map((tag, tagIndex) => (
+                                <span
+                                  key={tagIndex}
+                                  className="px-2 py-1 bg-purple-100/60 border border-purple-200 rounded-full text-xs text-purple-800 font-medium"
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                            <button className="w-full group bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white font-bold py-3 px-6 rounded-2xl hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 transition-all duration-500 shadow-xl hover:shadow-purple-500/25 hover:scale-105 flex items-center justify-center">
+                              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                              <Link href={`/contact`}>
+                                <span className="relative mr-2">Book Us</span>
+                              </Link>{" "}
+                              <ArrowRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                            </button>
                           </div>
-                          <button className="w-full bg-gradient-to-r from-purple-600/80 to-blue-600/80 text-white font-semibold py-3 px-6 rounded-2xl hover:from-purple-600 hover:to-blue-600 transition-all duration-300 flex items-center justify-center group">
-                            <Link href={`/contact`}>
-                              <span className="mr-2">Book Us</span>
-                            </Link>{" "}
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                          </button>
                         </div>
                       </div>
                     </div>
@@ -472,32 +515,45 @@ export default function PortfolioPage() {
             distance={100}
             direction="vertical"
             reverse={false}
+            duration={1.5}
             initialOpacity={0}
             animateOpacity={true}
             threshold={0.1}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <div className="bg-gradient-to-r from-purple-600/10 to-blue-600/10 backdrop-blur-sm rounded-3xl p-12 border border-white/10">
-                <h3 className="text-4xl font-bold text-white mb-6">
+              <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-12 border-2 border-purple-200/50 shadow-2xl hover:shadow-purple-500/10">
+                <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   Ready to Create Your Success Story?
                 </h3>
-                <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                {/* Subtle underline accent */}
+                <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto rounded-full mb-6"></div>
+                <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto font-medium">
                   Let&apos;s discuss how we can help you achieve similar results
                   and transform your brand&apos;s digital presence.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group">
-                    <Link href="/contact">
-                      <span className="mr-3">Start Your Project</span>
-                    </Link>
-
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
+                  <Link
+                    href="/contact"
+                    className="group inline-flex items-center bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white font-bold px-8 py-4 rounded-2xl hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 transition-all duration-500 shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transform-gpu touch-manipulation"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                    <span className="relative mr-3 text-lg">
+                      Start Your Project
+                    </span>
+                    <ArrowRight className="relative w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                  </Link>
                 </div>
               </div>
             </div>
           </AnimatedContent>
         </section>
+      </div>
+
+      {/* Additional decorative elements - Same as About Section */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-5">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-400/30 rounded-full animate-pulse"></div>
+        <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-purple-500/40 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-purple-600/30 rounded-full animate-pulse delay-500"></div>
       </div>
 
       {/* Safe Area Handling for iOS */}
