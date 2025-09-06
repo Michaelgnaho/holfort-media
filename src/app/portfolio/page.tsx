@@ -229,16 +229,17 @@ export default function PortfolioPage() {
                     threshold={0.1}
                   >
                     <div className="group relative">
+                      <div className="rounded-2xl overflow-hidden shadow-xl">
+                        <Video
+                          src={project.video}
+                          className="w-full h-auto rounded-t-2xl shadow-lg object-cover"
+                          muted
+                          playsInline
+                          webkit-playsinline="true"
+                        />
+                      </div>
                       <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden border-2 border-purple-200/50 shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:scale-[1.02]">
-                        <div className="relative w-full">
-                          <Video
-                            src={project.video}
-                            className="w-full h-auto rounded-t-2xl shadow-lg object-cover"
-                            muted
-                            playsInline
-                            webkit-playsinline="true"
-                          />
-                        </div>
+                        <div className="relative w-full"></div>
                         <div className="p-8">
                           <div className="flex items-center justify-between mb-3">
                             <span className="bg-gradient-to-r from-purple-600 to-purple-700 px-4 py-2 rounded-full text-white font-semibold text-sm">
