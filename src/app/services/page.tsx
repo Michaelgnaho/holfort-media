@@ -202,9 +202,11 @@ export default function ServicesPage() {
               <div className="text-center mb-16">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight leading-[0.9] mb-8">
                   Our{" "}
-                  <span className="text-purple-900 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text drop-shadow-sm">
-                    Services
-                  </span>
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[0.9] mb-6">
+                    <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 bg-clip-text text-transparent">
+                      Services
+                    </span>
+                  </h2>
                 </h1>
                 {/* Subtle underline accent - Same as About Section */}
                 <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto rounded-full mt-4 mb-8"></div>

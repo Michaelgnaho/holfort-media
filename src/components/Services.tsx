@@ -63,7 +63,7 @@ export default function ServicesSection() {
           scale={1}
           threshold={0.2}
         >
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mt-10 mb-12 sm:mb-16">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[0.9] mb-6">
               <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 bg-clip-text text-transparent">
                 Our Services

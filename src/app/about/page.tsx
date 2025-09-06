@@ -18,6 +18,7 @@ import Comfort from "../../../public/team/comfortReal.jpg";
 import seun from "../../../public/team/seun.jpg";
 import adeniji from "../../../public/team/AdenijiRachaelOmolade.jpg";
 import jemima from "../../../public/team/JemimaOlonade.jpg";
+import Link from "next/link";
 
 // Team Members Data
 const teamMembers = [
@@ -87,9 +88,11 @@ export default function AboutPage() {
               <div className="text-center mb-12 sm:mb-16">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight leading-[0.9] mb-6">
                   About{" "}
-                  <span className="text-purple-900 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text drop-shadow-sm">
-                    Holfort Media
-                  </span>
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[0.9] mb-6">
+                    <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 bg-clip-text text-transparent">
+                      Holfort Media
+                    </span>
+                  </h2>
                 </h1>
                 {/* Subtle underline accent - Same as About Section */}
                 <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto rounded-full mt-4 mb-6"></div>
@@ -750,14 +753,12 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="group inline-flex items-center bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white font-bold px-8 py-4 rounded-2xl hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 transition-all duration-500 shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transform-gpu touch-manipulation">
                   <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                  <span className="relative mr-3 text-lg">
-                    Start Your Journey
-                  </span>
+                  <Link href="/services" className="relative z-10">
+                    <span className="relative mr-3 text-lg">
+                      Start Your Journey
+                    </span>
+                  </Link>
                   <ArrowRight className="relative w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-                </button>
-                <button className="group inline-flex items-center bg-white/80 backdrop-blur-xl text-gray-900 font-bold px-8 py-4 rounded-2xl border-2 border-purple-200/50 hover:border-purple-400 hover:bg-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 touch-manipulation">
-                  <Play className="w-5 h-5 mr-3" />
-                  <span className="text-lg">Watch Our Story</span>
                 </button>
               </div>
             </div>

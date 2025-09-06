@@ -181,9 +181,11 @@ export default function ContactPage() {
               <div className="text-center mb-16">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[0.9] mb-6">
                   Let&apos;s{" "}
-                  <span className="text-purple-900 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text drop-shadow-sm">
-                    Connect
-                  </span>
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[0.9] mb-6">
+                    <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 bg-clip-text text-transparent">
+                      Connect
+                    </span>
+                  </h2>
                 </h1>
                 {/* Subtle underline accent */}
                 <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto rounded-full mt-4 mb-6"></div>
@@ -277,37 +279,6 @@ export default function ContactPage() {
                         within 24 hours with a customized proposal.
                       </p>
                     </div>
-
-                    {isSubmitted && (
-                      <AnimatedContent
-                        distance={100}
-                        direction="vertical"
-                        reverse={false}
-                        duration={1.5}
-                        initialOpacity={0}
-                        animateOpacity={true}
-                        scale={1}
-                        threshold={0.2}
-                      >
-                        <div className="mb-6 bg-green-100/80 border-2 border-green-200 rounded-2xl p-4 flex items-center">
-                          <CheckCircle className="w-6 h-6 text-green-600 mr-3" />
-                          <div>
-                            <h3 className="text-green-800 font-semibold">
-                              Message Sent Successfully!
-                            </h3>
-                            <p className="text-green-700 text-sm font-medium">
-                              We&apos;ll get back to you within 24 hours.
-                            </p>
-                          </div>
-                        </div>
-                      </AnimatedContent>
-                    )}
-
-                    {error && (
-                      <div className="mb-6 bg-red-100/80 border-2 border-red-200 rounded-2xl p-4">
-                        <p className="text-red-800 font-semibold">{error}</p>
-                      </div>
-                    )}
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                       {/* Project Type Selection */}
@@ -633,6 +604,36 @@ export default function ContactPage() {
                         </button>
                       </AnimatedContent>
                     </form>
+                    {isSubmitted && (
+                      <AnimatedContent
+                        distance={100}
+                        direction="vertical"
+                        reverse={false}
+                        duration={1.5}
+                        initialOpacity={0}
+                        animateOpacity={true}
+                        scale={1}
+                        threshold={0.2}
+                      >
+                        <div className="mb-6 bg-green-100/80 border-2 border-green-200 rounded-2xl p-4 flex items-center">
+                          <CheckCircle className="w-6 h-6 text-green-600 mr-3" />
+                          <div>
+                            <h3 className="text-green-800 font-semibold">
+                              Message Sent Successfully!
+                            </h3>
+                            <p className="text-green-700 text-sm font-medium">
+                              We&apos;ll get back to you within 24 hours.
+                            </p>
+                          </div>
+                        </div>
+                      </AnimatedContent>
+                    )}
+
+                    {error && (
+                      <div className="mb-6 bg-red-100/80 border-2 border-red-200 rounded-2xl p-4">
+                        <p className="text-red-800 font-semibold">{error}</p>
+                      </div>
+                    )}
                   </div>
 
                   {/* Decorative Elements - Same as About Section */}
