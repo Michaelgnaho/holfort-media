@@ -237,7 +237,6 @@ export default function PortfolioPage() {
                             muted
                             playsInline
                             webkit-playsinline="true"
-                            controls
                           />
                         </div>
                         <div className="p-8">
@@ -415,7 +414,6 @@ export default function PortfolioPage() {
                               muted
                               playsInline
                               webkit-playsinline="true"
-                              controls
                             />
                           </div>
                           <div
