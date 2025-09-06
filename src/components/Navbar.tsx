@@ -142,7 +142,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 w-screen bg-gradient-to-br from-slate-50 via-white to-purple-50/30 border-t border-purple-200/30 overflow-hidden shadow-lg"
+      className="sticky top-0 z-50 w-screen text-black bg-gradient-to-br from-slate-50 via-white to-purple-50/30 border-t border-purple-200/30 overflow-hidden shadow-lg"
       role="navigation"
       aria-label="Main navigation"
     >
@@ -161,9 +161,9 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden text-gray-700  hover:bg-purple-800/50  md:block">
+          <div className="hidden text-gray-700   md:block">
             <ul
-              className="flex text-gray-700  hover:bg-purple-800/50 items-center space-x-8"
+              className="flex text-gray-700  items-center space-x-8"
               role="menubar"
             >
               {navigationItems.map((item) => {
