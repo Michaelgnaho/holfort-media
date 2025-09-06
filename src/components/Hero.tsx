@@ -34,7 +34,9 @@ export default function Hero() {
                   pauseDuration={1500}
                   showCursor={true}
                   className="text-purple-900"
-                  textColors={["text-purple-900"]}
+                  textColors={[
+                    "text-gradient-to-r from-purple-600 via-purple-700 to-purple-900",
+                  ]}
                 />
               </span>
             </h1>
