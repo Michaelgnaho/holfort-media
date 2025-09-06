@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import logo from "@/holfort-logo.jpg";
+import { div } from "three/tsl";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -69,13 +70,19 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-black/95 backdrop-blur-md border-t border-gray-800 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20" />
-      </div>
+    <footer className="relative bg-gradient-to-br from-slate-50 via-white to-purple-50/30 border-t border-purple-200/30 overflow-hidden">
+      {/* Advanced Background Pattern - Same as Hero */}
+      <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_50%_50%,_purple_1px,_transparent_1px)] bg-[length:40px_40px]"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Floating Elements for Visual Interest - Same as Hero */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-purple-200/20 to-blue-200/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-l from-purple-300/15 to-pink-300/15 rounded-full blur-3xl opacity-25 animate-pulse delay-1000"></div>
+      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-r from-blue-200/15 to-purple-200/15 rounded-full blur-3xl opacity-20 animate-pulse delay-500"></div>
+
+      {/* Refined overlay for perfect contrast - Same as Hero */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/10 via-transparent to-white/20"></div>
+
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
@@ -85,19 +92,19 @@ export default function Footer() {
               <div className="flex items-center gap-3 mb-6">
                 <Link
                   href="/"
-                  className="text-white text-xl font-bold hover:text-gray-200 transition-colors duration-200"
+                  className="text-gray-900 text-xl font-bold hover:text-purple-700 transition-colors duration-200"
                   aria-label="Holfort Media - Go to homepage"
                 >
                   <Image
                     src={logo}
-                    className="w-8 h-8 rounded-md"
+                    className="w-14 h-14 rounded-md shadow-lg"
                     alt={"LOGO"}
                   />
                 </Link>
               </div>
 
               {/* Description */}
-              <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-md">
+              <p className="text-gray-700 text-lg leading-relaxed mb-8 max-w-md font-medium">
                 Transforming brands through innovative digital solutions,
                 strategic media management, and impactful storytelling that
                 drives global impact.
@@ -105,38 +112,51 @@ export default function Footer() {
 
               {/* Contact Info */}
               <div className="space-y-4">
-                <div className="flex items-center gap-3 text-gray-300">
-                  <MapPin className="w-5 h-5 text-purple-400" />
-                  <span>Lagos, Nigeria</span>
+                <div className="flex items-center gap-3 text-gray-700">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg flex items-center justify-center">
+                    <MapPin className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="font-medium">Lagos, Nigeria</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Phone className="w-5 h-5 text-blue-400" />
-                  <span>+2347013805937</span>
+                <div className="flex items-center gap-3 text-gray-700">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg flex items-center justify-center">
+                    <Phone className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="font-medium">+2347079405729</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Mail className="w-5 h-5 text-indigo-400" />
-                  <span>holfortmedia@gmail.com</span>
+                <div className="flex items-center gap-3 text-gray-700">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg flex items-center justify-center">
+                    <Mail className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="font-medium">holfortmedia@gmail.com</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Clock className="w-5 h-5 text-purple-400" />
-                  <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                <div className="flex items-center gap-3 text-gray-700">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg flex items-center justify-center">
+                    <Clock className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="font-medium">
+                    Mon - Fri: 9:00 AM - 6:00 PM
+                  </span>
                 </div>
               </div>
 
               {/* Newsletter Signup */}
               <div className="mt-8">
-                <h4 className="text-white font-semibold text-lg mb-4">
+                <h4 className="text-gray-900 font-bold text-lg mb-2">
                   Stay Updated
                 </h4>
+                {/* Subtle underline accent */}
+                <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full mb-4"></div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm"
+                    className="flex-1 bg-white/80 backdrop-blur-xl border-2 border-purple-200/50 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-400 shadow-lg"
                   />
-                  <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 flex items-center gap-2 font-medium">
-                    Subscribe
-                    <ArrowRight className="w-4 h-4" />
+                  <button className="group relative bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white font-bold px-6 py-3 rounded-xl hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 transition-all duration-500 shadow-xl hover:shadow-purple-500/25 hover:scale-105 flex items-center gap-2 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="relative">Subscribe</span>
+                    <ArrowRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
               </div>
@@ -144,7 +164,11 @@ export default function Footer() {
 
             {/* Quick Links Column */}
             <div>
-              <h4 className="text-white font-bold text-lg mb-6">Quick Links</h4>
+              <h4 className="text-gray-900 font-bold text-lg mb-2">
+                Quick Links
+              </h4>
+              {/* Subtle underline accent */}
+              <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full mb-6"></div>
               <ul className="space-y-4">
                 {navigationLinks.map((link) => {
                   const Icon = link.icon;
@@ -152,9 +176,11 @@ export default function Footer() {
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center gap-3 group"
+                        className="text-gray-700 hover:text-purple-700 transition-colors duration-200 flex items-center gap-3 group font-medium"
                       >
-                        <Icon className="w-4 h-4 text-purple-400 group-hover:text-white transition-colors duration-200" />
+                        <div className="w-6 h-6 bg-gradient-to-r from-purple-200/50 to-purple-300/50 rounded-lg flex items-center justify-center group-hover:from-purple-600 group-hover:to-purple-700 transition-all duration-300">
+                          <Icon className="w-3 h-3 text-purple-600 group-hover:text-white transition-colors duration-200" />
+                        </div>
                         {link.name}
                       </Link>
                     </li>
@@ -163,9 +189,11 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/contact"
-                    className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center gap-3 group"
+                    className="text-gray-700 hover:text-purple-700 transition-colors duration-200 flex items-center gap-3 group font-medium"
                   >
-                    <Calendar className="w-4 h-4 text-blue-400 group-hover:text-white transition-colors duration-200" />
+                    <div className="w-6 h-6 bg-gradient-to-r from-purple-200/50 to-purple-300/50 rounded-lg flex items-center justify-center group-hover:from-purple-600 group-hover:to-purple-700 transition-all duration-300">
+                      <Calendar className="w-3 h-3 text-purple-600 group-hover:text-white transition-colors duration-200" />
+                    </div>
                     Book Us
                   </Link>
                 </li>
@@ -174,17 +202,19 @@ export default function Footer() {
 
             {/* Services Column */}
             <div>
-              <h4 className="text-white font-bold text-lg mb-6">
+              <h4 className="text-gray-900 font-bold text-lg mb-2">
                 Our Services
               </h4>
+              {/* Subtle underline accent */}
+              <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full mb-6"></div>
               <ul className="space-y-4">
                 {services.map((service, index) => (
                   <li key={index}>
                     <Link
                       href="/services"
-                      className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center gap-3 group"
+                      className="text-gray-700 hover:text-purple-700 transition-colors duration-200 flex items-center gap-3 group font-medium"
                     >
-                      <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
+                      <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                       {service}
                     </Link>
                   </li>
@@ -195,11 +225,15 @@ export default function Footer() {
         </div>
 
         {/* Social Links & CTA Section */}
-        <div className="border-t border-gray-800 py-12">
+        <div className="border-t border-purple-200/50 py-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Social Links */}
             <div>
-              <h4 className="text-white font-bold text-lg mb-6">Follow Us</h4>
+              <h4 className="text-gray-900 font-bold text-lg mb-2">
+                Follow Us
+              </h4>
+              {/* Subtle underline accent */}
+              <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full mb-6"></div>
               <div className="flex gap-4">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
@@ -209,10 +243,10 @@ export default function Footer() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-sm border border-white/10 rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:border-purple-400 transition-all duration-300 group"
+                      className="w-12 h-12 bg-white/80 backdrop-blur-xl border-2 border-purple-200/50 rounded-xl flex items-center justify-center text-purple-600 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 hover:border-purple-400 transition-all duration-300 group shadow-lg hover:shadow-purple-500/25 hover:scale-110"
                       aria-label={`Follow us on ${social.name}`}
                     >
-                      <Icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                      <Icon className="w-5 h-5 transition-transform duration-300" />
                     </a>
                   );
                 })}
@@ -221,26 +255,30 @@ export default function Footer() {
 
             {/* CTA Section */}
             <div className="text-center md:text-right">
-              <h4 className="text-white font-bold text-lg mb-4">
+              <h4 className="text-gray-900 font-bold text-lg mb-2">
                 Ready to Get Started?
               </h4>
-              <p className="text-gray-300 mb-6">
+              {/* Subtle underline accent */}
+              <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full mb-4 mx-auto md:ml-auto md:mr-0"></div>
+              <p className="text-gray-700 mb-6 font-medium">
                 Let&apos;s transform your brand together
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-end">
                 <Link
                   href="/contact"
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-6 py-3 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center gap-2"
+                  className="group relative bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white font-bold px-6 py-3 rounded-xl hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 transition-all duration-500 shadow-xl hover:shadow-purple-500/25 hover:scale-105 inline-flex items-center gap-2 overflow-hidden"
                 >
-                  <Calendar className="w-4 h-4" />
-                  Book Consultation
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Calendar className="relative w-4 h-4" />
+                  <span className="relative">Book Consultation</span>
                 </Link>
                 <Link
                   href="/portfolio"
-                  className="bg-white/10 backdrop-blur-sm text-white font-semibold px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 inline-flex items-center gap-2"
+                  className="group bg-white/80 backdrop-blur-xl text-gray-900 font-bold px-6 py-3 rounded-xl border-2 border-purple-200 hover:border-purple-400 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center gap-2 relative overflow-hidden"
                 >
                   <FolderOpen className="w-4 h-4" />
-                  View Our Work
+                  <span>View Our Work</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
                 </Link>
               </div>
             </div>
@@ -248,10 +286,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 py-8">
+        <div className="border-t border-purple-200/50 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
-            <div className="text-gray-400 text-center md:text-left">
+            <div className="text-gray-600 text-center md:text-left">
               <p>&copy; {currentYear} Holfort Media. All rights reserved.</p>
             </div>
 
@@ -259,19 +297,19 @@ export default function Footer() {
             <div className="flex gap-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-gray-600 hover:text-purple-700 transition-colors duration-200 font-medium"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-gray-600 hover:text-purple-700 transition-colors duration-200 font-medium"
               >
                 Terms of Service
               </Link>
               <Link
                 href="/cookies"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-gray-600 hover:text-purple-700 transition-colors duration-200 font-medium"
               >
                 Cookie Policy
               </Link>
@@ -279,6 +317,15 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Safe Area Handling for iOS */}
+      <style jsx>{`
+        @supports (padding: env(safe-area-inset)) {
+          footer {
+            padding-bottom: calc(env(safe-area-inset-bottom) + 2rem);
+          }
+        }
+      `}</style>
     </footer>
   );
 }

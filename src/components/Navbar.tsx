@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -126,12 +125,12 @@ export default function Navbar() {
   const getLinkClasses = (href: string, isCTA = false): string => {
     const baseClasses =
       "text-white font-medium transition-all duration-200 flex items-center gap-2";
-    const activeClasses = "text-white border-b-2 border-white";
-    const inactiveClasses = "hover:text-gray-200 hover:scale-105";
+    const activeClasses = "text-white border-b-2 border-purple-300";
+    const inactiveClasses = "hover:text-purple-200 hover:scale-105";
 
     if (isCTA) {
       const ctaClasses =
-        "px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-200";
+        "px-4 py-2 border-2 border-purple-300 rounded-lg bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 hover:border-purple-200 hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105";
       return `${baseClasses} ${ctaClasses}`;
     }
 
@@ -142,7 +141,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 w-screen bg-black backdrop-blur-md border-b border-gray-800"
+      className="sticky top-0 z-50 w-screen bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 backdrop-blur-md border-b border-purple-700/30 shadow-lg"
       role="navigation"
       aria-label="Main navigation"
     >
@@ -150,13 +149,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
           <div className="flex items-center gap-3">
-            {/* Optional SVG Logo Mark */}
-            {/* <Image src={logo} fill alt={""} className=""/> */}
-
             {/* Text Logo */}
             <Link
               href="/"
-              className="text-white text-xl font-bold hover:text-gray-200 transition-colors duration-200"
+              className="text-white text-xl font-bold hover:text-purple-200 transition-colors duration-200"
               aria-label="Holfort Media - Go to homepage"
             >
               <Image src={logo} className="w-8 h-8 rounded-md" alt={"LOGO"} />
@@ -203,7 +199,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               type="button"
-              className="text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 p-2 rounded-md transition-colors duration-200"
+              className="text-white hover:text-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:ring-offset-2 focus:ring-offset-purple-800 p-2 rounded-md transition-colors duration-200"
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen}
               aria-label={
@@ -227,7 +223,7 @@ export default function Navbar() {
         <div
           ref={mobileMenuRef}
           id="mobile-menu"
-          className="md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800"
+          className="md:hidden bg-gradient-to-b from-purple-900 via-purple-800 to-purple-900 backdrop-blur-md border-t border-purple-700/30"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="mobile-menu-button"
@@ -242,7 +238,7 @@ export default function Navbar() {
                       href={item.href}
                       className={`${getLinkClasses(
                         item.href
-                      )} text-lg py-2 px-4 block rounded-md hover:bg-gray-800`}
+                      )} text-lg py-2 px-4 block rounded-md hover:bg-purple-800/50`}
                       role="menuitem"
                       tabIndex={isMobileMenuOpen ? 0 : -1}
                       aria-current={
@@ -257,7 +253,7 @@ export default function Navbar() {
               })}
 
               {/* Mobile CTA Button */}
-              <li role="none" className="pt-4 border-t border-gray-700">
+              <li role="none" className="pt-4 border-t border-purple-700/40">
                 <Link
                   href={ctaButton.href}
                   className={`${getLinkClasses(
