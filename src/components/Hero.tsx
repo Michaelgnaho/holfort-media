@@ -107,8 +107,7 @@ export default function Hero() {
                 <Video
                   src={HeroVid}
                   className="w-full h-auto"
-                  // autoPlay
-                  loop
+                  autoPlay
                   muted
                   playsInline
                 />
