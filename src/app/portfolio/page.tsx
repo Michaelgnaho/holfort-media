@@ -22,17 +22,17 @@ import Link from "next/link";
 const portfolioItems = [
   {
     id: 1,
-    title: "Igbogbo PVC Campaign",
+    title: "Igbogbo/Baiyeku LCDA PVC Awareness Program",
     category: "Video Coverage",
     type: "event",
-    client: "Igbogbo Local Government",
+    client: "Igbogbo LCDA",
     description:
-      "Complete media coverage and live streaming A Message from the Executive Chairman, Igbogbo Baiyeku LCDA on PVC Collection",
+      "Complete media coverage and live streaming A Message from the Executive Chairman, Igbogbo/Baiyeku LCDA on PVC Collection",
     video: PVC,
     results: {
-      views: "50K+",
+      views: "10K+",
       engagement: "85%",
-      reach: "2M+",
+      reach: "15k+",
       duration: "3 Days",
     },
     tags: ["Live Streaming", "Social Media", "Content Creation"],
@@ -67,7 +67,7 @@ const portfolioItems = [
     video: HOA,
     results: {
       followers: "+250%",
-      mentions: "500+",
+      mentions: "50+",
       interviews: "25+",
       speaking: "12 Events",
     },
@@ -86,7 +86,7 @@ const portfolioItems = [
     results: {
       views: "75K+",
       engagement: "90%",
-      reach: "3M+",
+      reach: "300k+",
       duration: "1 Day",
     },
     tags: ["Event Coverage", "Photography", "Videography"],
@@ -156,13 +156,13 @@ export default function PortfolioPage() {
                 <div className="grid md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                   {[
                     {
-                      value: "50+",
+                      value: "10+",
                       label: "Projects Delivered",
                       color: "purple",
                     },
-                    { value: "2M+", label: "People Reached", color: "blue" },
+                    { value: "10k+", label: "People Reached", color: "blue" },
                     { value: "95%", label: "Success Rate", color: "indigo" },
-                    { value: "25+", label: "Awards Won", color: "pink" },
+                    { value: "3+", label: "Awards Won", color: "pink" },
                   ].map((stat, index) => (
                     <AnimatedContent
                       key={index}
