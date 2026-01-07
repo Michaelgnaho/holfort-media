@@ -1,8 +1,8 @@
 // public/sw.js - Service Worker for advanced caching
 
-const CACHE_NAME = "holfort-media-v1";
-const STATIC_CACHE = "holfort-static-v1";
-const DYNAMIC_CACHE = "holfort-dynamic-v1";
+const CACHE_NAME = "holfort-media-v2"; // UPDATED VERSION
+const STATIC_CACHE = "holfort-static-v2"; // UPDATED VERSION
+const DYNAMIC_CACHE = "holfort-dynamic-v2"; // UPDATED VERSION
 
 // Assets to cache on install
 const STATIC_ASSETS = [
@@ -12,67 +12,76 @@ const STATIC_ASSETS = [
   "/portfolio",
   "/contact",
   "/manifest.json",
-  "/logo.png",
-  "/apple-touch-icon.png",
-  "/og-image.jpg",
-  "/twitter-image.jpg",
-  // Add your critical CSS and JS files
-  "/_next/static/css/app.css", // Replace with actual file names
-  "/_next/static/chunks/main.js", // Replace with actual file names
 ];
 
 // Cache strategies
 const CACHE_STRATEGIES = {
-  // Cache first for static assets
   CACHE_FIRST: "cache-first",
-  // Network first for dynamic content
   NETWORK_FIRST: "network-first",
-  // Stale while revalidate for pages
   STALE_WHILE_REVALIDATE: "stale-while-revalidate",
 };
 
 // Install event - cache static assets
 self.addEventListener("install", (event) => {
+  console.log('[SW] Installing Service Worker v2...');
   event.waitUntil(
     caches
       .open(STATIC_CACHE)
       .then((cache) => {
-        console.log("Pre-caching static assets");
-        return cache.addAll(STATIC_ASSETS);
+        console.log("[SW] Pre-caching static assets");
+        // Try to cache, but don't fail if some assets are missing
+        return Promise.allSettled(
+          STATIC_ASSETS.map(asset => 
+            cache.add(asset).catch(err => {
+              console.warn(`[SW] Failed to cache ${asset}:`, err);
+              return null;
+            })
+          )
+        );
       })
       .then(() => {
-        console.log("Static assets cached successfully");
+        console.log("[SW] Static assets cached successfully");
         return self.skipWaiting();
       })
       .catch((error) => {
-        console.error("Failed to cache static assets:", error);
+        console.error("[SW] Failed to cache static assets:", error);
       })
   );
 });
 
-// Activate event - clean up old caches
+// Activate event - FORCE clean up ALL old caches
 self.addEventListener("activate", (event) => {
+  console.log('[SW] Activating new Service Worker v2...');
   event.waitUntil(
     caches
       .keys()
       .then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
+            // Delete ALL caches that aren't the current version
             if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
-              console.log("Deleting old cache:", cacheName);
+              console.log("[SW] Deleting old cache:", cacheName);
               return caches.delete(cacheName);
             }
           })
         );
       })
       .then(() => {
-        console.log("Old caches cleaned up");
+        console.log("[SW] Old caches cleaned up, claiming clients");
         return self.clients.claim();
+      })
+      .then(() => {
+        // Notify all clients that new SW is active
+        return self.clients.matchAll().then(clients => {
+          clients.forEach(client => {
+            client.postMessage({ type: 'SW_UPDATED', version: 'v2' });
+          });
+        });
       })
   );
 });
 
-// Fetch event - implement caching strategies
+// Fetch event - implement caching strategies with better error handling
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   const url = new URL(request.url);
@@ -114,7 +123,7 @@ function isPage(request) {
   return (
     request.mode === "navigate" ||
     (request.method === "GET" &&
-      request.headers.get("accept").includes("text/html"))
+      request.headers.get("accept")?.includes("text/html"))
   );
 }
 
@@ -122,44 +131,51 @@ function isAPI(request) {
   return request.url.includes("/api/");
 }
 
-// Cache strategies implementation
+// Cache strategies implementation with better error handling
 async function cacheFirst(request, cacheName) {
   try {
     const cache = await caches.open(cacheName);
     const cachedResponse = await cache.match(request);
 
     if (cachedResponse) {
-      console.log("Cache hit:", request.url);
+      console.log("[SW] Cache hit:", request.url);
       return cachedResponse;
     }
 
-    console.log("Cache miss, fetching:", request.url);
+    console.log("[SW] Cache miss, fetching:", request.url);
     const networkResponse = await fetch(request);
 
-    if (networkResponse.ok) {
+    // Only cache successful responses
+    if (networkResponse && networkResponse.ok && networkResponse.status === 200) {
       await cache.put(request, networkResponse.clone());
     }
 
     return networkResponse;
   } catch (error) {
-    console.error("Cache first failed:", error);
-    return new Response("Offline content not available", { status: 503 });
+    console.error("[SW] Cache first failed:", error);
+    // Try to return network response without caching
+    try {
+      return await fetch(request);
+    } catch (fetchError) {
+      return new Response("Offline content not available", { status: 503 });
+    }
   }
 }
 
 async function networkFirst(request, cacheName) {
   try {
-    console.log("Network first:", request.url);
+    console.log("[SW] Network first:", request.url);
     const networkResponse = await fetch(request);
 
-    if (networkResponse.ok) {
+    // Only cache successful responses
+    if (networkResponse && networkResponse.ok && networkResponse.status === 200) {
       const cache = await caches.open(cacheName);
       await cache.put(request, networkResponse.clone());
     }
 
     return networkResponse;
   } catch (error) {
-    console.log("Network failed, trying cache:", request.url);
+    console.log("[SW] Network failed, trying cache:", request.url);
     const cache = await caches.open(cacheName);
     const cachedResponse = await cache.match(request);
 
@@ -172,29 +188,36 @@ async function networkFirst(request, cacheName) {
 }
 
 async function staleWhileRevalidate(request, cacheName) {
-  const cache = await caches.open(cacheName);
-  const cachedResponse = await cache.match(request);
+  try {
+    const cache = await caches.open(cacheName);
+    const cachedResponse = await cache.match(request);
 
-  // Start fetch in background
-  const fetchPromise = fetch(request).then((networkResponse) => {
-    if (networkResponse.ok) {
-      cache.put(request, networkResponse.clone());
+    // Start fetch in background
+    const fetchPromise = fetch(request)
+      .then((networkResponse) => {
+        if (networkResponse && networkResponse.ok && networkResponse.status === 200) {
+          cache.put(request, networkResponse.clone());
+        }
+        return networkResponse;
+      })
+      .catch(error => {
+        console.warn("[SW] Background fetch failed:", error);
+        return null;
+      });
+
+    // Return cached version immediately if available
+    if (cachedResponse) {
+      console.log("[SW] Stale while revalidate - cache hit:", request.url);
+      return cachedResponse;
     }
-    return networkResponse;
-  });
 
-  // Return cached version immediately if available
-  if (cachedResponse) {
-    console.log("Stale while revalidate - cache hit:", request.url);
-    return cachedResponse;
+    // If no cache, wait for network
+    console.log("[SW] Stale while revalidate - no cache, waiting for network:", request.url);
+    return fetchPromise || fetch(request);
+  } catch (error) {
+    console.error("[SW] Stale while revalidate failed:", error);
+    return fetch(request);
   }
-
-  // If no cache, wait for network
-  console.log(
-    "Stale while revalidate - no cache, waiting for network:",
-    request.url
-  );
-  return fetchPromise;
 }
 
 // Background sync for offline actions (optional)
@@ -205,8 +228,7 @@ self.addEventListener("sync", (event) => {
 });
 
 async function doBackgroundSync() {
-  // Implement background sync logic if needed
-  console.log("Background sync triggered");
+  console.log("[SW] Background sync triggered");
 }
 
 // Push notification handling (optional)
@@ -232,6 +254,7 @@ self.addEventListener("push", (event) => {
 // Message handling from main thread
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
+    console.log("[SW] Skipping waiting...");
     self.skipWaiting();
   }
 });
