@@ -165,6 +165,12 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  compiler: {
+    removeConsole: false,
+  },
+  // Disable minification for debugging
+  swcMinify: false,
 };
 
 export default withNextVideo(nextConfig);
